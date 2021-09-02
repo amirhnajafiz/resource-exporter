@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -16,9 +17,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Factory::create();
         DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(12) . "@gmail.com",
+            'name' => $faker->firstName,
+            'email' => $faker->freeEmail,
             'password' => Hash::make('password'),
             'is_admin' => 1
         ]);

@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome')
+        ->with('title', 'welcome');
+})->name('welcome');
+
+Route::get('login', function () {
+    return view('components.user.login')
+        ->with('title', 'login');
+})->name('login.page');

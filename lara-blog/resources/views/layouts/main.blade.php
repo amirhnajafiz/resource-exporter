@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -14,10 +14,10 @@
     </head>
     <body>
 
-        <div class="container w-75 m-auto my-5 p-0">
+        <div class="container mt-5 w-75 p-0">
             <x-header></x-header>
             @if ($errors->any())
-                <div class="alert alert-danger my-2">
+                <div class="alert alert-danger mb-2">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>

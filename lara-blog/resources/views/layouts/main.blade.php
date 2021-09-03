@@ -15,6 +15,7 @@
     <body>
 
         <div class="container w-75 m-auto my-5 p-0">
+            <x-header></x-header>
             @if ($errors->any())
                 <div class="alert alert-danger my-2">
                     <ul>

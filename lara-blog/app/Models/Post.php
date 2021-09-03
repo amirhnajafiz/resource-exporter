@@ -14,7 +14,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'creator'
+        'user_id'
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo

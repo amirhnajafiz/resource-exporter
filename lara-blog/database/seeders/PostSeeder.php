@@ -17,13 +17,6 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::all();
-        $user = $users[rand(0, count($users)-1)];
-        $faker = Factory::create();
-        DB::table('posts')->insert([
-            'title' => $faker->text(20),
-            'content' => $faker->sentence(30, true),
-            'creator' => $user->id
-        ]);
+        //
     }
 }

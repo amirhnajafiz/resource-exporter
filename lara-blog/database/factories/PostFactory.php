@@ -23,7 +23,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->words(rand(2, 5), true),
-            'content' => $this->faker->sentence(rand(7, 30), true)
+            'content' => $this->faker->sentence(rand(7, 20), true)
         ];
     }
 }

@@ -1,10 +1,10 @@
 <div class="mb-4">
     <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-        <a class="navbar-brand text-dark" href="{{ route('welcome') }}">
+        <a class="navbar-brand {{ !request()->routeIs('welcome') ? 'active' : '' }}" href="{{ route('welcome') }}">
             Home
         </a>
         <div class="navbar-nav">
-            <a class="nav-item nav-link text-dark" href="{{ route('login.page') }}">
+            <a class="nav-item {{ !request()->routeIs('login.page') ? 'active' : '' }}" href="{{ route('login.page') }}">
                 Login
             </a>
         </div>

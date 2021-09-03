@@ -12,9 +12,8 @@
             Blog - {{ $title }}
         </title>
     </head>
-    <body>
-
-        <div class="container mt-5 w-75 p-0">
+    <body class="text-light" style="background-image: linear-gradient(to bottom right, #131d2b, #cfcfbe); background-repeat: no-repeat; background-size: contain; background-attachment: fixed">
+        <div class="container-fluid p-0">
             <x-header></x-header>
             @if ($errors->any())
                 <div class="alert alert-danger mb-2">

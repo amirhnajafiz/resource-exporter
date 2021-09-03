@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
+use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Date;
@@ -18,6 +20,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        User::factory()
+            ->count(30)
+            ->has(Post::factory()->count(4))
+            ->create();
     }
 }

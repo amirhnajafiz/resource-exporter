@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="w-25 m-auto p-5 text-dark bg-light rounded" style="margin-top: 200px !important;">
+    <div class="w-50 m-auto p-5 text-dark bg-light rounded" style="margin-top: 150px !important;">
         <h3 class="text-center mb-5">
             Login to your account
         </h3>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <button type="submit" class="btn btn-primary mr-1">Send</button>
+                <button type="submit" class="btn btn-primary mr-1">Login</button>
                 <button type="reset" class="btn btn-danger ml-1">Reset</button>
             </div>
         </form>

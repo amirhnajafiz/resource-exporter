@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <main role="main" class="container text-dark w-75" style="margin-top: 100px !important;">
+    <main role="main" class="container text-dark w-75" style="margin-top: 200px !important;">
         <div class="jumbotron">
             <div class="row">
                 <h1 class="mb-3 d-inline-block col-lg-2 col-md-12 col-sm-12">

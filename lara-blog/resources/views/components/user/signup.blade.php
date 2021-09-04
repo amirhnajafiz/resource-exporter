@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="w-25 m-auto p-5 text-dark bg-light rounded" style="margin-top: 100px !important;">
+    <div class="w-25 m-auto p-5 text-dark bg-light rounded" style="margin-top: 200px !important;">
         <h3 class="text-center mb-5">
             Create your account now
         </h3>

@@ -22,3 +22,8 @@ Route::get('login', function () {
     return view('components.user.login')
         ->with('title', 'login');
 })->name('login.page');
+
+Route::get('register', function () {
+    return view('components.user.signup')
+        ->with('title', 'sign up');
+})->name('register.page');

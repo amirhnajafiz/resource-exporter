@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/signup.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,7 @@
       <workItem from="1630682499506" duration="384000" />
       <workItem from="1630686730671" duration="3284000" />
       <workItem from="1630697690837" duration="3786000" />
-      <workItem from="1630737789717" duration="3116000" />
+      <workItem from="1630737789717" duration="3867000" />
     </task>
     <servers />
   </component>

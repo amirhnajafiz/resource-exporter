@@ -16,6 +16,11 @@
                             Login
                         </a>
                     </li>
+                    <li class="nav-item {{ request()->routeIs('register.page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('register.page') }}">
+                            Sign up
+                        </a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">

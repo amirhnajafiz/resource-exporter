@@ -1,5 +1,5 @@
 <div class="mb-4 rounded d-block">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="position: fixed; top: 0; z-index: 9999;">
         <div class="container">
             <a
                 class="navbar-brand {{ request()->routeIs('welcome') ? 'active' : '' }}"

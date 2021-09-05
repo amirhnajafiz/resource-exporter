@@ -13,11 +13,13 @@
         </title>
     </head>
     <body class="text-light" style="background-image: linear-gradient(to bottom right, #131d2b, #cfcfbe); background-repeat: no-repeat; background-size: contain; background-attachment: fixed">
-        <div class="container-fluid p-0">
-            <x-header></x-header>
-            @yield('content')
-            <x-footer></x-footer>
+        <x-header></x-header>
+        <div class="container-fluid p-0" style="margin-top: 100px; margin-bottom: 20px;">
+            <div style="height: 100vh;">
+                @yield('content')
+            </div>
         </div>
+        <x-footer></x-footer>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

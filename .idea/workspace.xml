@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +167,8 @@
       <workItem from="1630686730671" duration="3284000" />
       <workItem from="1630697690837" duration="3786000" />
       <workItem from="1630737789717" duration="4183000" />
-      <workItem from="1630815792853" duration="13102000" />
+      <workItem from="1630815792853" duration="13311000" />
+      <workItem from="1630856635419" duration="501000" />
     </task>
     <servers />
   </component>

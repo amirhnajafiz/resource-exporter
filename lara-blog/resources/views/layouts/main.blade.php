@@ -24,6 +24,11 @@
                     </ul>
                 </div>
             @endif
+            @if (session($message))
+                <div class="alert alert-{{ $message_type }} mb-2">
+                    {{ $message }}
+                </div>
+            @endif
             @yield('content')
             <x-footer></x-footer>
         </div>

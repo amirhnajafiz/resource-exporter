@@ -39,6 +39,8 @@ trait Register
         User::query()->create($validated);
 
         return redirect()
-            ->route('login.page');
+            ->route('login.page')
+            ->with('message', 'User registered successfully.')
+            ->with('message_type', 'success');
     }
 }

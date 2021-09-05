@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\traits\user\Register;
 
 class UserController extends Controller
 {
-    //
+    use Register;
 }

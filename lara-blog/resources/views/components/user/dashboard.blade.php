@@ -6,13 +6,12 @@
             {{ "Welcome " . $user->name }}
         </h2>
         <div>
-            <ul>
-                @foreach($user->posts as $post)
-                    <li>
-                        {{ $post->title }}
-                    </li>
-                @endforeach
-            </ul>
+            @foreach($user->posts as $post)
+                <x-post.post
+                    title="{{ $post->title }}"
+                    content="{{ $post->content }}"
+                ></x-post.post>
+            @endforeach
         </div>
     </div>
 @stop

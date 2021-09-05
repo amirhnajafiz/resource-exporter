@@ -30,7 +30,7 @@ class post extends Component
      */
     public function render()
     {
-        $content = strlen($this->content) > 50 ? substr($this->content, 0 , 47) . ' ...' : $this->content;
+        $content = strlen($this->content) > 30 ? substr($this->content, 0 , 47) . ' ...' : $this->content;
         return view('components.post.post')
             ->with('title', $this->title)
             ->with('content', $content);

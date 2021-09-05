@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="w-50 m-auto text-dark bg-light rounded" style="margin-top: 150px !important;">
-        <h3 class="text-center mb-3 bg-dark text-light rounded py-3">
+        <h3
+            class="text-center bg-dark text-light rounded py-3 mb-0"
+            style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;"
+        >
             Create your account now
         </h3>
         @if($errors->any())
             <x-error-box></x-error-box>
         @endif
-        <div class="p-5">
+        <div class="p-5 mt-3">
             <form action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="form-group row d-flex align-items-center">
@@ -19,7 +22,7 @@
                     </div>
                     <div class="d-inline-block col-10 col-md-10 col-sm-12">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email ...">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email ..." value="{{ old('email') }}">
                         <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
                     </div>
                 </div>
@@ -32,7 +35,7 @@
                     </div>
                     <div class="d-inline-block col-10 col-md-10 col-sm-12">
                         <label for="exampleInputPhone">Phone number</label>
-                        <input type="text" name="phone" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" placeholder="Enter phone number ...">
+                        <input type="text" name="phone" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" placeholder="Enter phone number ..." value="{{ old('phone') }}">
                         <small id="phoneHelp" class="form-text">We'll never share your phone number with anyone else.</small>
                     </div>
                 </div>
@@ -45,7 +48,7 @@
                     </div>
                     <div class="d-inline-block col-10 col-md-10 col-sm-12">
                         <label for="exampleInputName">Account name</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter a name ...">
+                        <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter a name ..." value="{{ old('name') }}">
                         <small id="nameHelp" class="form-text">This name will display in all of your posts.</small>
                     </div>
                 </div>
@@ -57,7 +60,7 @@
                     </div>
                     <div class="d-inline-block col-10 col-md-10 col-sm-12">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password ...">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password ..." value="{{ old('password') }}">
                     </div>
                 </div>
                 <div class="text-center mt-5">

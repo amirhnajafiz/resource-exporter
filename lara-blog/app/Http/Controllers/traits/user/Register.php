@@ -24,13 +24,12 @@ trait Register
         ];
 
         $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages);
-        $validated = array();
 
-        $validated = $validator->validated();
+        $validator->after(function ($validator) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        });
 
-        if ($validator->fails()) {
-            return back()->withInput($validated);
-        }
+        $validated = $validator->validate();
 
         User::query()->create($validated);
 

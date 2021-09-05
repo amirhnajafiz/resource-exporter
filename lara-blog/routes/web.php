@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Welcome route
 Route::get('/', function () {
     return view('welcome')
         ->with('title', 'welcome');
 })->name('welcome');
 
+// Login, register routes
 Route::get('login', function () {
     return view('components.user.login')
         ->with('title', 'login');
@@ -35,8 +37,16 @@ Route::post('login', [UserController::class, 'login'])
 Route::post('register', [UserController::class, 'register'])
     ->name('register');
 
-Route::get('dashboard', [UserController::class, 'dashboard'])
-    ->name('dashboard');
+// Auth needed routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('index', function () {
+        return view('components.public.index')
+            ->with('title', 'public');
+    })->name('index');
 
-Route::get('logout', [UserController::class, 'logout'])
-    ->name('logout');
+    Route::get('dashboard', [UserController::class, 'dashboard'])
+        ->name('dashboard');
+
+    Route::get('logout', [UserController::class, 'logout'])
+        ->name('logout');
+});

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -10,6 +11,10 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+    protected $middlewareGroups = [
+        'auth' => [Authenticate::class]
+    ];
+
     /**
      * The path to the "home" route for your application.
      *

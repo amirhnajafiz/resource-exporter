@@ -4,6 +4,7 @@ namespace App\Http\Controllers\traits\user;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 trait CreatePost
 {
@@ -29,6 +30,11 @@ trait CreatePost
         });
 
         $validated = $validator->validate();
+
+        if ($validated['user_id'] != Auth::id())
+        {
+            return redirect()->back()->withErrors(['message' => 'You cannot create a post for other people!'])->withInput();
+        }
 
         Post::query()->create($validated);
 

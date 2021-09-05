@@ -19,13 +19,26 @@
                 <div class="form-group row">
                     <div class="d-inline-block col-12">
                         <label for="titleForm">Post title</label>
-                        <input type="text" name="title" class="form-control" id="titleForm" aria-describedby="emailHelp" placeholder="Enter title ...">
+                        <input
+                            type="text"
+                            name="title"
+                            class="form-control"
+                            id="titleForm"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter title ..."
+                            value="{{ old('title') }}"
+                        />
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="d-inline-block col-12">
                         <label for="postContent">Content</label>
-                        <textarea id="postContent" class="form-control" name="content" placeholder="Write the body ..."></textarea>
+                        <textarea
+                            id="postContent"
+                            class="form-control"
+                            name="content"
+                            placeholder="Write the body ..."
+                        ></textarea>
                     </div>
                 </div>
                 <div class="text-center mt-5">

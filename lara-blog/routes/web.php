@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,6 @@ Route::get('register', function () {
     return view('components.user.signup')
         ->with('title', 'sign up');
 })->name('register.page');
+
+Route::post('register', [UserController::class, 'register'])
+    ->name('register');

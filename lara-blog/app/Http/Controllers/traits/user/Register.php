@@ -12,7 +12,7 @@ trait Register
     {
         $rules = [
             'email' => 'required|email:rfc,dns',
-            'phone' => 'required|regex:09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}',
+            'phone' => 'required',
             'name' => 'required|max:20',
             'password' => 'required|min:8|max:20'
         ];

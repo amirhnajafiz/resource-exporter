@@ -6,7 +6,7 @@
             Create your account now
         </h3>
         <div class="p-5">
-            <form action="" method="post">
+            <form action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="form-group row d-flex align-items-center">
                     <div class="d-inline-block col-lg-2 col-md-2 col-sm-12">

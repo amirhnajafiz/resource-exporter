@@ -24,9 +24,9 @@
                     </ul>
                 </div>
             @endif
-            @if (session($message))
-                <div class="alert alert-{{ $message_type }} mb-2">
-                    {{ $message }}
+            @if (isset($message))
+                <div class="alert alert-{{ session($message_type) }} mb-2">
+                    {{ session($message) }}
                 </div>
             @endif
             @yield('content')

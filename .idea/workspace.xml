@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="" />
+    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,7 +163,7 @@
       <workItem from="1630686730671" duration="3284000" />
       <workItem from="1630697690837" duration="3786000" />
       <workItem from="1630737789717" duration="4183000" />
-      <workItem from="1630815792853" duration="2754000" />
+      <workItem from="1630815792853" duration="5105000" />
     </task>
     <servers />
   </component>

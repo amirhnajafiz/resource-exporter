@@ -13,6 +13,7 @@ class UserController extends Controller
     public function dashboard()
     {
         return view('components.user.dashboard')
-            ->with('user', Auth::user());
+            ->with('user', Auth::user())
+            ->with('title' , 'dashboard');
     }
 }

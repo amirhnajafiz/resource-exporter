@@ -13,17 +13,8 @@
         </title>
     </head>
     <body class="text-light" style="background-image: linear-gradient(to bottom right, #131d2b, #cfcfbe); background-repeat: no-repeat; background-size: contain; background-attachment: fixed">
-        <div class="container-fluid p-0" style="height: 100vh; position:relative;">
+        <div class="container-fluid p-0">
             <x-header></x-header>
-            @if ($errors->any())
-                <div class="alert alert-danger mb-2">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             @yield('content')
             <x-footer></x-footer>
         </div>

@@ -1,4 +1,4 @@
-<footer class="bg-dark text-center text-light" style="position:absolute; bottom: 0; height: 50px; width: 100%;">
+<footer class="bg-dark text-center text-light mt-5">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright:

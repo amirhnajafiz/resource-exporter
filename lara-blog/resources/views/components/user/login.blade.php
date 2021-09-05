@@ -2,10 +2,16 @@
 
 @section('content')
     <div class="w-50 m-auto text-dark bg-light rounded" style="margin-top: 150px !important;">
-        <h3 class="text-center mb-3 bg-dark text-light rounded py-3">
+        <h3
+            class="text-center bg-dark text-light rounded py-3 mb-0"
+            style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;"
+        >
             Login to your account
         </h3>
-        <div class="p-5">
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
+        <div class="p-5 mt-3">
             <form action="" method="post">
                 @csrf
                 <div class="form-group row d-flex align-items-center">

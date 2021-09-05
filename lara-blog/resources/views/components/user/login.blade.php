@@ -5,6 +5,9 @@
         <h3 class="text-center mb-3 bg-dark text-light rounded py-3">
             Login to your account
         </h3>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="p-5">
             <form action="" method="post">
                 @csrf

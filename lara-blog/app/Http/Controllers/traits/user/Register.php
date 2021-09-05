@@ -26,11 +26,7 @@ trait Register
         $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages);
         $validated = array();
 
-        try {
-            $validated = $validator->validated();
-        } catch (ValidationException $e) {
-            return back()->withInput($validated);
-        }
+        $validated = $validator->validated();
 
         if ($validator->fails()) {
             return back()->withInput($validated);
@@ -39,8 +35,6 @@ trait Register
         User::query()->create($validated);
 
         return redirect()
-            ->route('login.page')
-            ->with('message', 'User registered successfully.')
-            ->with('message_type', 'success');
+            ->route('login.page');
     }
 }

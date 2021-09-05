@@ -37,3 +37,6 @@ Route::post('register', [UserController::class, 'register'])
 
 Route::get('dashboard', [UserController::class, 'dashboard'])
     ->name('dashboard');
+
+Route::get('logout', [UserController::class, 'logout'])
+    ->name('logout');

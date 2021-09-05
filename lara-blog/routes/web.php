@@ -29,5 +29,11 @@ Route::get('register', function () {
         ->with('title', 'sign up');
 })->name('register.page');
 
+Route::post('login', [UserController::class, 'login'])
+    ->name('login');
+
 Route::post('register', [UserController::class, 'register'])
     ->name('register');
+
+Route::get('dashboard', [UserController::class, 'dashboard'])
+    ->name('dashboard');

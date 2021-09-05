@@ -4,7 +4,6 @@ namespace App\Http\Controllers\traits\user;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 
 trait Register
 {

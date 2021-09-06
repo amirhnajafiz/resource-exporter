@@ -27,7 +27,7 @@
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 </svg>
             </a>
-            <a href="#" type="button" class="btn btn-danger">
+            <a href="{{ route('trash', $user) }}" type="button" class="btn btn-danger">
                 <span>
                     Recently deleted
                 </span>

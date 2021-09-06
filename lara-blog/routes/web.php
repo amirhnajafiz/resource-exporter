@@ -82,4 +82,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('change/{id}', [UserController::class, 'updateview'])
         ->name('update.user.page');
+
+    Route::patch('change', [UserController::class, 'update'])
+        ->name('update.user');
 });

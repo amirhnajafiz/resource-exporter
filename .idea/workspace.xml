@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/Update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +167,7 @@
       <workItem from="1630737789717" duration="4183000" />
       <workItem from="1630815792853" duration="13311000" />
       <workItem from="1630856635419" duration="3266000" />
-      <workItem from="1630910863874" duration="8466000" />
+      <workItem from="1630910863874" duration="9241000" />
     </task>
     <servers />
   </component>

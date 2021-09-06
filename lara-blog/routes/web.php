@@ -70,4 +70,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('force/{id}', [PostController::class, 'force'])
         ->name('force.post');
+
+    Route::patch('restore/{id}', [PostController::class, 'restore'])
+        ->name('restore.post');
 });

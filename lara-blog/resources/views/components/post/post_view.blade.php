@@ -19,6 +19,9 @@
                 </small>
             </div>
         </h3>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="p-5 mt-1">
             <p class="h6 border rounded p-4">
                 {{ $post->content }}

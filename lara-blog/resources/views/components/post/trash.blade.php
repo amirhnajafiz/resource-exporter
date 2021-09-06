@@ -9,6 +9,9 @@
             {{ "Recently deleted posts" }}<br />
             <small class="h6">Restore or delete your posts</small>
         </h3>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="p-5 mt-1">
             @if(count($posts) > 0)
                 @foreach($posts as $post)

@@ -9,6 +9,9 @@
             {{ "Welcome " . $user->name }}<br />
             <small>See your posts</small>
         </h3>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="d-flex justify-content-around p-3 mt-1 flex-wrap">
             <a href="{{ route('create.post') }}" type="button" class="btn btn-primary">
                 <span>

@@ -7,7 +7,6 @@ use App\Http\Controllers\traits\post\Force;
 use App\Http\Controllers\traits\post\Restore;
 use App\Http\Controllers\traits\post\Update;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 

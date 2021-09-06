@@ -81,6 +81,9 @@
                     <a type="button" href="{{ route('dashboard') }}" class="btn btn-danger ml-1">Cancel</a>
                 </div>
             </form>
+            <a href="{{ route('password.change.page', $user) }}" class="d-block text-center mt-3">
+                Change your password
+            </a>
         </div>
     </div>
 @stop

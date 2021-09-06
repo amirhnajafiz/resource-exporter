@@ -61,4 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('post/{id?}', [PostController::class, 'viewpost'])
         ->name('view.post');
+
+    Route::delete('delete/{id?}', [PostController::class, 'delete'])
+        ->name('delete.post');
 });

@@ -57,4 +57,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::put('create', [UserController::class, 'create'])
         ->name('create.post');
+
+    Route::get('post/{id?}', [UserController::class, 'viewpost'])
+        ->name('view.post');
 });

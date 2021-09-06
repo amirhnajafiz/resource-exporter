@@ -6,8 +6,13 @@
         <p>
             {{ strlen($content) > 50 ? substr($content, 0 , 47) . ' ...' : $content }}
         </p>
-        <small class="bg-light text-dark rounded p-2">
-            {{ 'Created: ' . $created }}
-        </small>
+        <div class="d-flex justify-content-between flex-wrap">
+            <small class="bg-light text-dark rounded p-2">
+                {{ 'Created: ' . $created }}
+            </small>
+            <a href="{{ route('view.post', $link) }}" class="btn btn-light">
+                View post
+            </a>
+        </div>
     </div>
 </div>

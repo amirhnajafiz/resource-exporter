@@ -11,6 +11,7 @@ class post extends Component
     public $title;
     public $content;
     public $created;
+    public $link;
 
     /**
      * Create a new component instance.
@@ -18,12 +19,14 @@ class post extends Component
      * @param $title
      * @param $content
      * @param $created
+     * @param $link
      */
-    public function __construct($title, $content, $created)
+    public function __construct($title, $content, $created, $link)
     {
         $this->title = $title;
         $this->content = $content;
         $this->created = $created;
+        $this->link = $link;
     }
 
     /**
@@ -36,6 +39,7 @@ class post extends Component
         return view('components.post.post')
             ->with('title', $this->title)
             ->with('content', $this->content)
-            ->with('created', $this->created);
+            ->with('created', $this->created)
+            ->with('link', $this->link);
     }
 }

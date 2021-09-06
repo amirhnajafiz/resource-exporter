@@ -38,15 +38,26 @@
             </a>
         </div>
         <div class="p-5 mt-1">
-            @foreach($user->posts as $post)
-                <x-post.post
-                    title="{{ $post->title }}"
-                    content="{{ $post->content }}"
-                    created="{{ $post->created_at }}"
-                    link="{{ $post->id }}"
-                    id="{{ $post->id }}"
-                ></x-post.post>
-            @endforeach
+            @if(count($user->posts) > 0)
+                @foreach($user->posts as $post)
+                    <x-post.post
+                        title="{{ $post->title }}"
+                        content="{{ $post->content }}"
+                        created="{{ $post->created_at }}"
+                        link="{{ $post->id }}"
+                        id="{{ $post->id }}"
+                    ></x-post.post>
+                @endforeach
+            @else
+                <div class="bg-danger text-light p-4 rounded d-flex justify-content-between">
+                    <span class="h4">
+                        No posts yet
+                    </span>
+                    <a href="{{ route('create.post') }}" class="btn btn-light">
+                        Create now
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 @stop

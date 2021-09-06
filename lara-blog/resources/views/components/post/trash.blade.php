@@ -10,15 +10,26 @@
             <small class="h6">Restore or delete your posts</small>
         </h3>
         <div class="p-5 mt-1">
-            @foreach($posts as $post)
-                <x-post.post
-                    title="{{ $post->title }}"
-                    content="{{ $post->content }}"
-                    created="{{ $post->created_at }}"
-                    link=""
-                    id="{{ $post->id }}"
-                ></x-post.post>
-            @endforeach
+            @if(count($posts) > 0)
+                @foreach($posts as $post)
+                    <x-post.post
+                        title="{{ $post->title }}"
+                        content="{{ $post->content }}"
+                        created="{{ $post->created_at }}"
+                        link=""
+                        id="{{ $post->id }}"
+                    ></x-post.post>
+                @endforeach
+            @else
+                <div class="bg-danger text-light p-4 rounded d-flex justify-content-between">
+                    <span class="h4">
+                        Trash is empty
+                    </span>
+                    <a href="{{ route('dashboard') }}" class="btn btn-light">
+                        Back
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 @stop

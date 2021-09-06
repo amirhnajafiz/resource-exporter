@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,4 +50,33 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('logout', [UserController::class, 'logout'])
         ->name('logout');
+
+    Route::get('create', function () {
+        return view('components.post.create')
+            ->with('title', 'create post');
+    })->name('create.post.page');
+
+    Route::put('create', [UserController::class, 'create'])
+        ->name('create.post');
+
+    Route::get('post/{id?}', [PostController::class, 'viewpost'])
+        ->name('view.post');
+
+    Route::delete('delete/{id?}', [PostController::class, 'delete'])
+        ->name('delete.post');
+
+    Route::get('trash/{id?}', [PostController::class, 'viewtrash'])
+        ->name('trash');
+
+    Route::delete('force/{id}', [PostController::class, 'force'])
+        ->name('force.post');
+
+    Route::patch('restore/{id}', [PostController::class, 'restore'])
+        ->name('restore.post');
+
+    Route::get('update/{id?}', [PostController::class, 'updateview'])
+        ->name('update.post.page');
+
+    Route::put('update', [PostController::class, 'update'])
+        ->name('update.post');
 });

@@ -32,6 +32,11 @@
                                 Dashboard
                             </a>
                         </li>
+                        <li class="nav-item {{ request()->routeIs('create.post.page') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('create.post.page') }}">
+                                Post
+                            </a>
+                        </li>
                     @endif
                 </ul>
                 <form class="form-inline my-2 my-md-0">

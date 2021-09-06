@@ -33,7 +33,7 @@ trait Update
         if ($validated['email'] != Auth::user()->email) {
             return redirect()
                 ->back()
-                ->withErrors(['message' => 'You can\'t edit other peoples profile'])
+                ->withErrors(['message' => 'You can\'t edit other peoples profile.'])
                 ->withInput();
         }
 

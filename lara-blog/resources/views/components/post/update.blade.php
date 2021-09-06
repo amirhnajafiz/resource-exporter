@@ -6,16 +6,17 @@
             class="text-center bg-dark text-light rounded py-3 mb-0"
             style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;"
         >
-            Update your post
+            {{ "Edit your post " . $post->user->name }}
         </h3>
         @if($errors->any())
             <x-error-box></x-error-box>
         @endif
         <div class="p-5 mt-2">
-            <form action="{{ route('create.post') }}" method="post">
+            <form action="{{ route('update.post') }}" method="post">
                 @csrf
                 @method('put')
                 <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::id() }}" />
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
                 <div class="form-group row">
                     <div class="d-inline-block col-12">
                         <label for="titleForm">Post title</label>

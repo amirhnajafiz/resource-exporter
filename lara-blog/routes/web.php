@@ -73,4 +73,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::patch('restore/{id}', [PostController::class, 'restore'])
         ->name('restore.post');
+
+    Route::get('update/{id?}', [PostController::class, 'updateview'])
+        ->name('update.post.page');
+
+    Route::put('update', [PostController::class, 'update'])
+        ->name('update.post');
 });

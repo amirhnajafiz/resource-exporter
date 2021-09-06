@@ -52,7 +52,7 @@
                         </form>
                     </div>
                     <div>
-                        <form action="#" method="get">
+                        <form action="{{ route('update.post.page', $post) }}" method="get">
                             @csrf
                             <button type="submit" class="btn btn-secondary">
                                 Edit post

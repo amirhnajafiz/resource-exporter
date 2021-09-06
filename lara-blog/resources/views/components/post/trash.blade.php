@@ -15,7 +15,8 @@
                     title="{{ $post->title }}"
                     content="{{ $post->content }}"
                     created="{{ $post->created_at }}"
-                    link="{{ $post->id }}"
+                    link=""
+                    id="{{ $post->id }}"
                 ></x-post.post>
             @endforeach
         </div>

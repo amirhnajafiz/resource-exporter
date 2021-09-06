@@ -67,4 +67,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('trash/{id?}', [PostController::class, 'viewtrash'])
         ->name('trash');
+
+    Route::delete('force/{id}', [PostController::class, 'force'])
+        ->name('force.post');
 });

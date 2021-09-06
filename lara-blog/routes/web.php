@@ -79,4 +79,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::put('update', [PostController::class, 'update'])
         ->name('update.post');
+
+    Route::get('change/{id}', [UserController::class, 'updateview'])
+        ->name('update.user.page');
 });

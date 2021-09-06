@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/post/post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" afterDir="false" />
     </list>
@@ -164,7 +166,8 @@
       <workItem from="1630697690837" duration="3786000" />
       <workItem from="1630737789717" duration="4183000" />
       <workItem from="1630815792853" duration="13311000" />
-      <workItem from="1630856635419" duration="2940000" />
+      <workItem from="1630856635419" duration="3266000" />
+      <workItem from="1630910863874" duration="328000" />
     </task>
     <servers />
   </component>

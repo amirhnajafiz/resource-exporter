@@ -3,8 +3,11 @@
         <div class="h5">
             {{ $title }}
         </div>
+        <p>
+            {{ strlen($content) > 50 ? substr($content, 0 , 47) . ' ...' : $content }}
+        </p>
         <small>
-            {{ $content }}
+            {{ 'Created: ' . $created }}
         </small>
     </div>
 </div>

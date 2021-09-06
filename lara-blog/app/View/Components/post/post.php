@@ -10,17 +10,20 @@ class post extends Component
 {
     public $title;
     public $content;
+    public $created;
 
     /**
      * Create a new component instance.
      *
      * @param $title
      * @param $content
+     * @param $created
      */
-    public function __construct($title, $content)
+    public function __construct($title, $content, $created)
     {
         $this->title = $title;
         $this->content = $content;
+        $this->created = $created;
     }
 
     /**
@@ -30,9 +33,9 @@ class post extends Component
      */
     public function render()
     {
-        $content = strlen($this->content) > 30 ? substr($this->content, 0 , 47) . ' ...' : $this->content;
         return view('components.post.post')
             ->with('title', $this->title)
-            ->with('content', $content);
+            ->with('content', $this->content)
+            ->with('created', $this->created);
     }
 }

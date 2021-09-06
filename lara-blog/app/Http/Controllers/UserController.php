@@ -19,13 +19,4 @@ class UserController extends Controller
             ->with('user', Auth::user())
             ->with('title' , 'dashboard');
     }
-
-    public function viewpost($id = -1)
-    {
-        $post = Post::query()->findOrFail($id);
-
-        return view('components.post.post_view')
-            ->with('post', $post)
-            ->with('title', 'post - view');
-    }
 }

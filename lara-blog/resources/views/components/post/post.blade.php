@@ -6,7 +6,7 @@
         <p>
             {{ strlen($content) > 50 ? substr($content, 0 , 47) . ' ...' : $content }}
         </p>
-        <small>
+        <small class="bg-light text-dark rounded p-2">
             {{ 'Created: ' . $created }}
         </small>
     </div>

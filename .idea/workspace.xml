@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post_view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/trash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/trash.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +14,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/lara-blog/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,6 +151,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -169,7 +175,9 @@
       <workItem from="1630815792853" duration="13311000" />
       <workItem from="1630856635419" duration="3266000" />
       <workItem from="1630910863874" duration="11035000" />
-      <workItem from="1630922071213" duration="3069000" />
+      <workItem from="1630922071213" duration="3395000" />
+      <workItem from="1630925869037" duration="8000" />
+      <workItem from="1631002749770" duration="980000" />
     </task>
     <servers />
   </component>

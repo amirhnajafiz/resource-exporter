@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="w-50 m-auto text-dark bg-light rounded" style="margin-top: 150px !important;">
+    <div class="w-50 text-dark bg-light rounded" style="margin: 130px auto !important;">
         <h3
             class="text-center bg-dark text-light rounded py-3 mb-0"
             style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;"

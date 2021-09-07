@@ -14,6 +14,14 @@ class PostController extends Controller
 {
     use Delete, Force, Restore, Update;
 
+    public function index()
+    {
+        $posts = Post::all();
+        return view('components.public.index')
+            ->with('posts', $posts->random(min([5, $posts->count()])))
+            ->with('title', 'public');
+    }
+
     public function viewpost($id = -1)
     {
         $post = Post::query()->findOrFail($id);

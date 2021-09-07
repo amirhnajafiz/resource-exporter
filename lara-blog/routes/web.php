@@ -40,10 +40,8 @@ Route::post('register', [UserController::class, 'register'])
 
 // Auth needed routes
 Route::middleware(['auth'])->group(function () {
-    Route::get('index', function () {
-        return view('components.public.index')
-            ->with('title', 'public');
-    })->name('index');
+    Route::get('index', [PostController::class, 'index'])
+        ->name('index');
 
     Route::get('dashboard', [UserController::class, 'dashboard'])
         ->name('dashboard');

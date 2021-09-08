@@ -104,4 +104,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('comment', [UserController::class, 'comment'])
         ->name('comment');
+
+    Route::post('search', [PostController::class, 'search'])
+        ->name('search');
 });

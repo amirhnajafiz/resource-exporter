@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\traits\post\Delete;
 use App\Http\Controllers\traits\post\Force;
 use App\Http\Controllers\traits\post\Restore;
+use App\Http\Controllers\traits\post\Search;
 use App\Http\Controllers\traits\post\Update;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
-    use Delete, Force, Restore, Update;
+    use Delete, Force, Restore, Update, Search;
 
     public function index()
     {

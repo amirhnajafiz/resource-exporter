@@ -38,7 +38,7 @@
             </div>
             <div class="d-flex justify-content-around">
                 <button class="btn btn-light text-primary" onclick="like('{{ $post->id }}')">
-                    <small>
+                    <small id="{{ "like-" . $post->id }}">
                         {{ $post->likes->count() }}
                     </small>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
@@ -46,7 +46,7 @@
                     </svg>
                 </button>
                 <button class="btn btn-light text-danger" onclick="love('{{ $post->id }}')">
-                    <small>
+                    <small id="{{ "love-" . $post->id }}">
                         {{ $post->loves->count() }}
                     </small>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
@@ -54,6 +54,7 @@
                     </svg>
                 </button>
                 <button class="btn btn-light text-dark" onclick="save('{{ $post->id }}')">
+                    <small id="{{ "save-" . $post->id }}" style="display: none"></small>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
                         <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z"/>
                     </svg>
@@ -110,9 +111,8 @@
                 data: {
                     '_token': $('meta[name="csrf-token"]').attr('content')
                 },
-                success(id) {
-                    console.log('post liked');
-                    location.reload();
+                success(response) {
+                    document.getElementById('love-' + id).innerText = response.total;
                 },
                 error() {
                     alert("Failed");
@@ -126,9 +126,8 @@
                 data: {
                     '_token': $('meta[name="csrf-token"]').attr('content')
                 },
-                success(id) {
-                    console.log('post liked');
-                    location.reload();
+                success(response) {
+                    document.getElementById('like-' + id).innerText = response.total;
                 },
                 error() {
                     alert("Failed");
@@ -142,9 +141,13 @@
                 data: {
                     '_token': $('meta[name="csrf-token"]').attr('content')
                 },
-                success(id) {
-                    console.log('post saved');
-                    location.reload();
+                success(response) {
+                    document.getElementById('save-' + id).innerText = response.status;
+                    document.getElementById('save-' + id).style.display = 'inline-block';
+                    setTimeout(function () {
+                        document.getElementById('save-' + id).innerText = null;
+                        document.getElementById('save-' + id).style.display = 'none';
+                    }, 1000);
                 },
                 error() {
                     alert("Failed");

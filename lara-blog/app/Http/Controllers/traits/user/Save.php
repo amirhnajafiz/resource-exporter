@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Auth;
 
 trait Save
 {
-    public function save($id): \Illuminate\Http\RedirectResponse
+    public function save($id): \Illuminate\Http\JsonResponse
     {
         $result = \App\Models\Save::query()
             ->where('user_id', '=', Auth::id())
             ->where('post_id', '=', $id)
             ->get();
+
+        $status = 'Unsaved';
 
         if (count($result) > 0) {
             $result[0]->delete();
@@ -20,9 +22,12 @@ trait Save
                 'user_id' => Auth::id(),
                 'post_id' => $id
             ]);
+            $status = 'Saved';
         }
 
-        return redirect()->back();
+        return response()->json([
+            'status'=> $status
+        ]);
     }
 }
 

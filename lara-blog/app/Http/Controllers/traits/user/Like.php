@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait Like
 {
-    public function like($id): \Illuminate\Http\RedirectResponse
+    public function like($id): \Illuminate\Http\JsonResponse
     {
         $result = \App\Models\Like::query()
             ->where('user_id', '=', Auth::id())
@@ -22,6 +22,8 @@ trait Like
             ]);
         }
 
-        return redirect()->back();
+        return response()->json([
+            'total'=> \App\Models\Post::query()->find($id)->likes->count()
+        ]);
     }
 }

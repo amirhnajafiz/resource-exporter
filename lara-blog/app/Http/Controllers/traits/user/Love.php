@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait Love
 {
-    public function love($id): \Illuminate\Http\RedirectResponse
+    public function love($id): \Illuminate\Http\JsonResponse
     {
         $result = \App\Models\Love::query()
             ->where('user_id', '=', Auth::id())
@@ -22,6 +22,8 @@ trait Love
             ]);
         }
 
-        return redirect()->back();
+        return response()->json([
+            'total'=> \App\Models\Post::query()->find($id)->loves->count()
+        ]);
     }
 }

@@ -95,4 +95,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('like/{id}', [UserController::class, 'like'])
         ->name('like');
+
+    Route::get('save/{id}', [UserController::class, 'save'])
+        ->name('save');
 });

@@ -23,9 +23,9 @@
             <x-error-box></x-error-box>
         @endif
         <div class="p-5 mt-1">
-            <p class="h6 border rounded p-4">
-                {{ $post->content }}
-            </p>
+            <div class="h6 border rounded p-4">
+                {!! $post->content !!}
+            </div>
             <div class="d-flex justify-content-around">
                 <a href="#" class="btn btn-light text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">

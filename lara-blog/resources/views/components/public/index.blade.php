@@ -32,9 +32,9 @@
                 </small>
             </div>
             <div class="border rounded my-2 p-4">
-                <p>
-                    {{ $post->content }}
-                </p>
+                <div>
+                    {!! $post->content !!}
+                </div>
             </div>
             <div class="d-flex justify-content-around">
                 <a href="#" class="btn btn-light text-primary">

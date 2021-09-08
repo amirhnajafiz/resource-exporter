@@ -45,7 +45,7 @@
                 @foreach($user->posts as $post)
                     <x-post.post
                         title="{{ $post->title }}"
-                        content="{{ $post->content }}"
+                        content="{{ preg_replace('/(<([^>]+)>)/', '', $post->content) }}"
                         created="{{ $post->created_at }}"
                         link="{{ $post->id }}"
                         id="{{ $post->id }}"

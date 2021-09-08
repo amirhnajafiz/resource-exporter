@@ -12,7 +12,7 @@ trait Update
     {
         $rules = [
             'title' => 'required|max:50|min:2',
-            'content' => 'max:128|min:5',
+            'content' => 'max:1024|min:5',
             'user_id' => 'exists:App\Models\User,id',
             'post_id' => 'exists:App\Models\Post,id'
         ];

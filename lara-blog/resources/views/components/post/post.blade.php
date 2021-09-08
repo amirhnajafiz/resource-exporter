@@ -4,7 +4,7 @@
             {{ $title }}
         </div>
         <p>
-            {{ strlen($content) > 20 ? substr($content, 0 , 19) . ' ...' : $content }}
+            {{ strlen($content) > 20 ? substr($content, 0 , 19) . '...' : $content }}
         </p>
         <div class="d-flex justify-content-between flex-wrap">
             <small class="bg-light text-dark rounded p-2">

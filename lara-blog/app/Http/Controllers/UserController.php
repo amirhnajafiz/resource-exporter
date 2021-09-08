@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\user\ChangePassword;
 use App\Http\Controllers\traits\user\CreatePost;
+use App\Http\Controllers\traits\user\Like;
 use App\Http\Controllers\traits\user\Login;
 use App\Http\Controllers\traits\user\Logout;
 use App\Http\Controllers\traits\user\Love;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     use Register, Login, Logout, CreatePost, Update, ChangePassword;
-    use Love;
+    use Love, Like;
 
     public function dashboard()
     {

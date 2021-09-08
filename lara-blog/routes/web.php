@@ -98,4 +98,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('save/{id}', [UserController::class, 'save'])
         ->name('save');
+
+    Route::get('viewsave', [UserController::class, 'viewsave'])
+        ->name('view.save');
 });

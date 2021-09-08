@@ -37,6 +37,11 @@
                                 Post
                             </a>
                         </li>
+                        <li class="nav-item {{ request()->routeIs('view.save') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('view.save') }}">
+                                Saved
+                            </a>
+                        </li>
                     @endif
                 </ul>
                 <form class="form-inline my-2 my-md-0">

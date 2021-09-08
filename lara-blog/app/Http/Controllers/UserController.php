@@ -50,4 +50,11 @@ class UserController extends Controller
                 ->with('title', 'password - change');
         }
     }
+
+    public function viewsave()
+    {
+        return view('components.user.save')
+            ->with('title', 'saved')
+            ->with('user', Auth::user());
+    }
 }

@@ -89,4 +89,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::patch('password_change', [UserController::class, 'changePassword'])
         ->name('password.change');
+
+    Route::get('love/{id}', [UserController::class, 'love'])
+        ->name('love');
 });

@@ -13,7 +13,7 @@ class CreateLovesTable extends Migration
      */
     public function up()
     {
-        Schema::create('loves', function (Blueprint $table) {
+        Schema::create('love', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreignId('post_id')->references('id')->on('posts')->cascadeOnDelete();

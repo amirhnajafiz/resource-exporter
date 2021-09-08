@@ -55,4 +55,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function loves(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Love::class);
+    }
+
+    public function saves(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Save::class);
+    }
 }

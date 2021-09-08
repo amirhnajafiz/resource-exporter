@@ -26,4 +26,9 @@ class Post extends Model
     {
         return $this->hasMany(Like::class);
     }
+
+    public function loves(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Love::class);
+    }
 }

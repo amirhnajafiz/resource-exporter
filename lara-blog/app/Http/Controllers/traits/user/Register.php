@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\traits\user;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 trait Register
 {
@@ -30,6 +32,7 @@ trait Register
 
         $validated = $validator->validate();
 
+        $validated['password'] = Hash::make($validated['password']);
         User::query()->create($validated);
 
         return redirect()

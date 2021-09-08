@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait Love
 {
-    public function love($id): \Illuminate\Http\JsonResponse
+    public function love($id): \Illuminate\Http\RedirectResponse
     {
         $result = \App\Models\Love::query()
             ->where('user_id', '=', Auth::id())
@@ -22,8 +22,6 @@ trait Love
             ]);
         }
 
-        return response()->json([
-            'status' => 'OK'
-        ]);
+        return redirect()->back();
     }
 }

@@ -60,8 +60,9 @@
                 </button>
             </div>
             <div class="mt-2">
-                <form action="" method="post">
+                <form action="{{ route('comment') }}" method="post">
                     @csrf
+                    <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <label for="comment">
                         Leave a comment
                     </label>
@@ -71,13 +72,26 @@
                         name="comment"
                         placeholder="Write something ..."
                     ></textarea>
-                    <input type="submit" value="Send" class="btn btn-success mt-2" disabled />
+                    <input type="submit" value="Send" class="btn btn-success mt-2" />
                 </form>
             </div>
             <div class="my-3">
-                <h5>
-                    Comments soon ...
-                </h5>
+                @if(count($post->comments) > 0)
+                    @foreach($post->comments as $comment)
+                        <div class="border rounded my-1 p-2">
+                            <div>
+                                {{ $comment->user->name }} | {{ $comment->created_at }}
+                            </div>
+                            <div>
+                                {{ $comment->content }}
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <h5>
+                        Comments soon ...
+                    </h5>
+                @endif
             </div>
         </div>
         @endforeach

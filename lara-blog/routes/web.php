@@ -101,4 +101,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('viewsave', [UserController::class, 'viewsave'])
         ->name('view.save');
+
+    Route::post('comment', [UserController::class, 'comment'])
+        ->name('comment');
 });

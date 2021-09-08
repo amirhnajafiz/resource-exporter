@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait Like
 {
-    public function like($id): \Illuminate\Http\JsonResponse
+    public function like($id): \Illuminate\Http\RedirectResponse
     {
         $result = \App\Models\Like::query()
             ->where('user_id', '=', Auth::id())
@@ -22,8 +22,6 @@ trait Like
             ]);
         }
 
-        return response()->json([
-            'status' => 'OK'
-        ]);
+        return redirect()->back();
     }
 }

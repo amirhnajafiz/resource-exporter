@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait Save
 {
-    public function save($id): \Illuminate\Http\JsonResponse
+    public function save($id): \Illuminate\Http\RedirectResponse
     {
         $result = \App\Models\Save::query()
             ->where('user_id', '=', Auth::id())
@@ -22,9 +22,7 @@ trait Save
             ]);
         }
 
-        return response()->json([
-            'status' => 'OK'
-        ]);
+        return redirect()->back();
     }
 }
 

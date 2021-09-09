@@ -9,9 +9,7 @@
             <x-error-box></x-error-box>
         @endif
         <div class="p-5 mt-1">
-            <div class="h6 border rounded p-4">
-                {!! $post->content !!}
-            </div>
+            <x-post.body.content-box :post="$post"></x-post.body.content-box>
             <x-post.features-bar :post="$post" :type="$type"></x-post.features-bar>
             @if($post->user->id == \Illuminate\Support\Facades\Auth::id() && $type="view")
                 <x-post.body.modify-bar :post="$post"></x-post.body.modify-bar>

@@ -1,38 +1,9 @@
 <div {{ $attributes }}>
     <div class="w-50 m-auto text-dark bg-light rounded">
         @if($type == "view")
-            <h3
-                class="text-center bg-dark text-light rounded py-3 mb-0"
-                style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;"
-            >
-                {{ $post->title }}<br />
-                <small>
-                    {{ "Posted by: " . $post->user->name }}
-                </small>
-                <div class="d-flex justify-content-between mt-4 px-3">
-                    <small class="blockquote-footer" style="font-size: 0.5em">
-                        {{ "Created at: " . $post->created_at }}
-                    </small>
-                    <small class="blockquote-footer" style="font-size: 0.5em">
-                        {{ "Last edit: " . $post->updated_at }}
-                    </small>
-                </div>
-            </h3>
+            <x-post.header.view-header :post="$post"></x-post.header.view-header>
         @else
-            <div class="d-flex w-100 justify-content-start flex-wrap px-5 py-4">
-                <div class="d-inline-block rounded-circle bg-danger mr-2" style="width: 25px; height: 25px;"></div>
-                <div class="h5 d-inline-block">
-                    {{ $post->user->name }}
-                </div>
-            </div>
-            <div class="h4 my-2 px-5">
-                <span>
-                    {{ $post->title }}
-                </span>
-                <small class="blockquote-footer mt-1" style="font-size: 0.5em;">
-                    {{ "Created: " . $post->created_at }}
-                </small>
-            </div>
+            <x-post.header.index-header :post="$post"></x-post.header.index-header>
         @endif
         @if($errors->any())
             <x-error-box></x-error-box>

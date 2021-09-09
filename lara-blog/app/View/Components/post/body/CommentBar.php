@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\post;
+namespace App\View\Components\post\body;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -27,6 +27,6 @@ class CommentBar extends Component
      */
     public function render()
     {
-        return view('components.post.comment-bar');
+        return view('components.post.body.comment-bar');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\post;
+namespace App\View\Components\post\body;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -30,6 +30,6 @@ class FeaturesBar extends Component
      */
     public function render()
     {
-        return view('components.post.features-bar');
+        return view('components.post.body.features-bar');
     }
 }

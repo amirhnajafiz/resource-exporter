@@ -14,25 +14,7 @@
             </div>
             <x-post.features-bar :post="$post" :type="$type"></x-post.features-bar>
             @if($post->user->id == \Illuminate\Support\Facades\Auth::id() && $type="view")
-                <div class="d-flex my-3 justify-content-between px-2 flex-wrap">
-                    <div>
-                        <form action="{{ route('delete.post', $post) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-warning">
-                                Delete post
-                            </button>
-                        </form>
-                    </div>
-                    <div>
-                        <form action="{{ route('update.post.page', $post) }}" method="get">
-                            @csrf
-                            <button type="submit" class="btn btn-secondary">
-                                Edit post
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                <x-post.body.modify-bar :post="$post"></x-post.body.modify-bar>
             @endif
             <x-post.comment-bar :post="$post"></x-post.comment-bar>
         </div>

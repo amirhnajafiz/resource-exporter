@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         $post = Post::query()->findOrFail($id);
 
-        return view('components.post.post_view')
+        return view('components.post.postview')
             ->with('post', $post)
             ->with('title', 'post - view');
     }

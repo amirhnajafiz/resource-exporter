@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post_view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/save.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/save.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +186,7 @@
       <workItem from="1631030596751" duration="9000" />
       <workItem from="1631079331769" duration="13175000" />
       <workItem from="1631099884871" duration="3862000" />
-      <workItem from="1631165847308" duration="1839000" />
+      <workItem from="1631165847308" duration="2255000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

@@ -55,7 +55,7 @@
     </div>
 </div>
 
-@section('script')
+@section('scripts')
     <script>
         function togglePanel(link) {
             if (document.getElementById('rm' + link).style.display === 'block') {

@@ -22,11 +22,8 @@
             @if(count($user->saves) > 0)
                 @foreach($user->saves as $save)
                     <x-post.post
-                        title="{{ $save->post->title }}"
-                        content="{{ preg_replace('/(<([^>]+)>)/', '', $save->post->content) }}"
-                        created="{{ $save->post->created_at }}"
-                        link="{{ $save->post->id }}"
-                        id="{{ $save->post->id }}"
+                        :post="$save->post"
+                        type="view"
                     ></x-post.post>
                 @endforeach
             @else

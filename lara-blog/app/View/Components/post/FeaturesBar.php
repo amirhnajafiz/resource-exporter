@@ -1,20 +1,26 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\post;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ErrorBox extends Component
+class FeaturesBar extends Component
 {
+    public $post;
+    public $type;
+
     /**
      * Create a new component instance.
      *
+     * @param $type
+     * @param $post
      */
-    public function __construct()
+    public function __construct($type, $post)
     {
-        //
+        $this->post = $post;
+        $this->type = $type;
     }
 
     /**
@@ -24,6 +30,6 @@ class ErrorBox extends Component
      */
     public function render()
     {
-        return view('components.error-box');
+        return view('components.post.features-bar');
     }
 }

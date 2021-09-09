@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/ErrorBox.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/ErrorBox.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/Footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/Footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/post/PostCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/post/PostCard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/postview.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +191,7 @@
       <workItem from="1631030596751" duration="9000" />
       <workItem from="1631079331769" duration="13175000" />
       <workItem from="1631099884871" duration="3862000" />
-      <workItem from="1631165847308" duration="3219000" />
+      <workItem from="1631165847308" duration="4751000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

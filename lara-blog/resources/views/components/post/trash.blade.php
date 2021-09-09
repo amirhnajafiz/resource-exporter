@@ -21,11 +21,8 @@
             @if(count($posts) > 0)
                 @foreach($posts as $post)
                     <x-post.post
-                        title="{{ $post->title }}"
-                        content="{{ preg_replace('/(<([^>]+)>)/', '', $post->content) }}"
-                        created="{{ $post->created_at }}"
-                        link=""
-                        id="{{ $post->id }}"
+                        :post="$post"
+                        type="trash"
                     ></x-post.post>
                 @endforeach
             @else

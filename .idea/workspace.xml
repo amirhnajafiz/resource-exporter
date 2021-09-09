@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/Search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/View/Components/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/View/Components/post/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/trash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/trash.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +189,8 @@
       <workItem from="1631002749770" duration="2739000" />
       <workItem from="1631030596751" duration="9000" />
       <workItem from="1631079331769" duration="13175000" />
-      <workItem from="1631099884871" duration="3735000" />
+      <workItem from="1631099884871" duration="3862000" />
+      <workItem from="1631165847308" duration="371000" />
     </task>
     <servers />
   </component>

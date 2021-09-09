@@ -50,11 +50,8 @@
             @if(count($user->posts) > 0)
                 @foreach($user->posts as $post)
                     <x-post.post
-                        title="{{ $post->title }}"
-                        content="{{ preg_replace('/(<([^>]+)>)/', '', $post->content) }}"
-                        created="{{ $post->created_at }}"
-                        link="{{ $post->id }}"
-                        id="{{ $post->id }}"
+                        :post="$post"
+                        type="view"
                     ></x-post.post>
                 @endforeach
             @else

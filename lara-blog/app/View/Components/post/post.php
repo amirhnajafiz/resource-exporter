@@ -8,28 +8,21 @@ use Illuminate\View\Component;
 
 class post extends Component
 {
-    public $title;
+    public $post;
+    public $type;
     public $content;
-    public $created;
-    public $link;
-    public $id;
 
     /**
      * Create a new component instance.
      *
-     * @param $title
-     * @param $content
-     * @param $created
-     * @param $link
-     * @param $id
+     * @param $post
+     * @param $type
      */
-    public function __construct($title, $content, $created, $link, $id)
+    public function __construct($post, $type)
     {
-        $this->title = $title;
-        $this->content = $content;
-        $this->created = $created;
-        $this->link = $link;
-        $this->id = $id;
+        $this->post = $post;
+        $this->type = $type;
+        $this->content = preg_replace('/(<([^>]+)>)/', '', $this->post->content);
     }
 
     /**
@@ -39,11 +32,6 @@ class post extends Component
      */
     public function render()
     {
-        return view('components.post.post')
-            ->with('title', $this->title)
-            ->with('content', $this->content)
-            ->with('created', $this->created)
-            ->with('link', $this->link)
-            ->with('id', $this->id);
+        return view('components.post.post');
     }
 }

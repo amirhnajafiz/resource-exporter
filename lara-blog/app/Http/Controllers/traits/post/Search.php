@@ -4,7 +4,6 @@ namespace App\Http\Controllers\traits\post;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 trait Search
 {

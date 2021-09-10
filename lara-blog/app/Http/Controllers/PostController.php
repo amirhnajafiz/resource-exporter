@@ -7,13 +7,13 @@ use App\Http\Controllers\traits\post\Force;
 use App\Http\Controllers\traits\post\Restore;
 use App\Http\Controllers\traits\post\Search;
 use App\Http\Controllers\traits\post\Update;
+use App\Http\Controllers\traits\post\UpdateView;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
-    use Delete, Force, Restore, Update, Search;
+    use Delete, Force, Restore, Update, Search, UpdateView;
 
     public function index()
     {
@@ -43,40 +43,6 @@ class PostController extends Controller
             return view('components.post.trash')
                 ->with('posts', $posts)
                 ->with('title', 'trash');
-        }
-    }
-
-    public function updateview($id)
-    {
-        $rules = [
-            'id' => 'exists:App\Models\Post,id'
-        ];
-
-        $messages = [
-            'exists' => 'No post found.'
-        ];
-
-        $validator = Validator::make(['id' => $id], $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
-        });
-
-        $validated = $validator->validate();
-
-        $post = Post::query()->find($validated['id']);
-
-        if ($post->user->id != Auth::id())
-        {
-            return redirect()
-                ->back()
-                ->withErrors(['message' => 'You cannot update a post for other people!']);
-        } else {
-            return view('components.post.update')
-                ->with('post', $post)
-                ->with('title', 'post - edit - ' . $post->user->name);
         }
     }
 }

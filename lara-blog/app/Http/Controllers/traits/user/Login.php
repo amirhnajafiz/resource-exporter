@@ -2,29 +2,14 @@
 
 namespace App\Http\Controllers\traits\user;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserLoginRequest;
 use Illuminate\Support\Facades\Auth;
 
 trait Login
 {
-    public function login(Request $request): \Illuminate\Http\RedirectResponse
+    public function login(UserLoginRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $rules = [
-            'main_key' => 'required',
-            'password' => 'required'
-        ];
-
-        $messages = [
-            'required' => 'You must fill :attribute field.'
-        ];
-
-        $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        });
-
-        $validated = $validator->validate();
+        $validated = $request->validated();
 
         $phone = ['phone' => $validated['main_key'], 'password' => $validated['password']];
         $mail = ['email' => $validated['main_key'], 'password' => $validated['password']];

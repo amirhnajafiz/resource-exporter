@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\traits\AfterFailValidate;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRegisterRequest extends FormRequest
+class UserLoginRequest extends FormRequest
 {
     use AfterFailValidate;
 
@@ -27,19 +27,15 @@ class UserRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email:rfc,dns',
-            'phone' => 'required',
-            'name' => 'required|max:20',
-            'password' => 'required|min:8|max:20'
+            'main_key' => 'required',
+            'password' => 'required'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'required' => 'The :attribute field is required!',
-            'max' => 'The :attribute must be less than :size characters.',
-            'min' => 'The :attribute must be at least :size characters.'
+            'required' => 'You must fill :attribute field.'
         ];
     }
 }

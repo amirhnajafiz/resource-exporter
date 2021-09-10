@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\traits\user;
 
 use App\Http\Requests\UserRegisterRequest;
-use App\Models\Post;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 trait Register

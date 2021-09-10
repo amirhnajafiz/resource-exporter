@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/features-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/features-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +157,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Desktop\Lara-Blog\lara-blog\app\Http\Controllers" />
+      <recent name="F:\Desktop\Lara-Blog\lara-blog\app\Http\Controllers\Old" />
+      <recent name="F:\Desktop\Lara-Blog\lara-blog\app\View\Components\post\body" />
+      <recent name="F:\Desktop\Lara-Blog\lara-blog\resources\views\components\post\body" />
       <recent name="F:\Desktop\Lara-Blog\lara-blog\app\Http\Controllers\traits\user" />
     </key>
   </component>
@@ -187,7 +190,10 @@
       <workItem from="1631030596751" duration="9000" />
       <workItem from="1631079331769" duration="13175000" />
       <workItem from="1631099884871" duration="3862000" />
-      <workItem from="1631165847308" duration="5085000" />
+      <workItem from="1631165847308" duration="6285000" />
+      <workItem from="1631249281348" duration="1437000" />
+      <workItem from="1631251512501" duration="25000" />
+      <workItem from="1631253797718" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

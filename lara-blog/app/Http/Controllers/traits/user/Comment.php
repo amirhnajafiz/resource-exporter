@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers\traits\user;
 
+use App\Http\Requests\CreateCommentRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 trait Comment
 {
-    public function comment(Request $request): \Illuminate\Http\RedirectResponse
+    public function comment(CreateCommentRequest $request): \Illuminate\Http\RedirectResponse
     {
+        $validated = $request->validated();
+
         \App\Models\Comment::query()->create([
             'user_id' => Auth::id(),
-            'post_id' => $request->input('post_id'),
-            'content' => $request->input('comment'),
+            'post_id' => $validated['post_id'],
+            'content' => $validated['comment'],
         ]);
 
         return redirect()->back();

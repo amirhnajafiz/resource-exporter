@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\traits\user;
 
 use App\Http\Requests\CreateCommentRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 trait Comment

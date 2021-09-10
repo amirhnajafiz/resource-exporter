@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\traits\post;
 
+use App\Http\Requests\SearchRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 trait Search
 {
-    public function search(Request $request)
+    public function search(SearchRequest $request)
     {
-        $keyword = $request->input('keyword');
+        $validated = $request->validated();
+        $keyword = $validated['keyword'];
 
         $result = Post::query()
             ->orWhere('title', 'like', '%'.$keyword.'%')

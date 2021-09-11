@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change afterPath="$PROJECT_DIR$/lara-blog/app/Models/traits/UserRelations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/User.php" afterDir="false" />
-    </list>
+    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +193,7 @@
       <workItem from="1631251512501" duration="25000" />
       <workItem from="1631253797718" duration="4795000" />
       <workItem from="1631343175650" duration="33000" />
-      <workItem from="1631367477317" duration="2341000" />
+      <workItem from="1631367477317" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

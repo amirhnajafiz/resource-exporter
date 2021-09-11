@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
@@ -27,6 +28,8 @@ class DatabaseSeeder extends Seeder
 
         // Importing fake data
         $this->call([
+            TagSeeder::class,
+            CategorySeeder::class,
             UserSeeder::class
         ]);
     }

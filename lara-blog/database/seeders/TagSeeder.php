@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder
+class TagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +14,6 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        Post::factory(1)
-            ->has(Tag::factory(2))
-            ->has(Category::factory(2))
-            ->create();
+        Tag::factory(20)->create();
     }
 }

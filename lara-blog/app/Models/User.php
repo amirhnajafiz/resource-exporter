@@ -2,19 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\traits\UserRelations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Testing\Fluent\Concerns\Has;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    use SoftDeletes;
+    use SoftDeletes, UserRelations;
 
     /**
      * The attributes that are mass assignable.
@@ -51,25 +50,5 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
-    }
-
-    public function posts(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Post::class);
-    }
-
-    public function likes(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Like::class);
-    }
-
-    public function loves(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Love::class);
-    }
-
-    public function saves(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Save::class);
     }
 }

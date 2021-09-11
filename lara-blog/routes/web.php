@@ -108,3 +108,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('search', [PostController::class, 'search'])
         ->name('search');
 });
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('tags', \App\Http\Controllers\TagController::class);
+
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+});

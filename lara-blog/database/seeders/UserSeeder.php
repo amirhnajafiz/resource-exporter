@@ -2,14 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\User;
-use Faker\Factory;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -21,8 +18,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()
-            ->count(30)
-            ->has(Post::factory(4))
+            ->count(20)
+            ->has(Post::factory(10)->afterCreating(function ($post) {
+                $tags = Tag::query()->pluck('id')->random(rand(3, 10))->toArray();
+                $categories = Category::query()->pluck('id')->random(rand(1, 5))->toArray();
+                $post->tags()->sync($tags);
+                $post->categories()->sync($categories);
+            }))
             ->create();
     }
 }

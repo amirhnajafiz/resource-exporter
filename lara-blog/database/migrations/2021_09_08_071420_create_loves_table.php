@@ -28,6 +28,6 @@ class CreateLovesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loves');
+        Schema::dropIfExists('love');
     }
 }

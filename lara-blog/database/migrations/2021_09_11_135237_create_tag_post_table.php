@@ -13,7 +13,7 @@ class CreateTagPostTable extends Migration
      */
     public function up()
     {
-        Schema::create('tag_post', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->foreignIdFor(\App\Models\Tag::class);
             $table->foreignIdFor(\App\Models\Post::class);
         });
@@ -26,6 +26,6 @@ class CreateTagPostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tag_post');
+        Schema::dropIfExists('post_tag');
     }
 }

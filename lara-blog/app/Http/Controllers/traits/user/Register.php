@@ -12,7 +12,6 @@ trait Register
     {
         $validated = $request->validated();
 
-        $validated['password'] = Hash::make($validated['password']);
         User::query()->create($validated);
 
         return redirect()

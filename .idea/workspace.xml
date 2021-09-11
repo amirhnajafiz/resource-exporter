@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lara-blog/app/Models/traits/SlugMake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/Tag.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +196,7 @@
       <workItem from="1631251512501" duration="25000" />
       <workItem from="1631253797718" duration="4795000" />
       <workItem from="1631343175650" duration="33000" />
-      <workItem from="1631367477317" duration="642000" />
+      <workItem from="1631367477317" duration="1315000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

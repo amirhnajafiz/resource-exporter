@@ -16,7 +16,6 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::factory(10)
-            ->has(Image::factory(1))
             ->create();
     }
 }

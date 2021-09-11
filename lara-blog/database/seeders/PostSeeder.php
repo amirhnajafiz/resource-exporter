@@ -20,7 +20,6 @@ class PostSeeder extends Seeder
         Post::factory(1)
             ->has(Tag::factory(2))
             ->has(Category::factory(2))
-            ->has(Image::factory(1))
             ->create();
     }
 }

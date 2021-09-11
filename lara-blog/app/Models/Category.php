@@ -25,4 +25,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+    public function image(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

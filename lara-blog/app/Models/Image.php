@@ -15,4 +15,9 @@ class Image extends Model
         'alt',
         'path'
     ];
+
+    public function imageable(): \Illuminate\Database\Eloquent\Relations\MorphTo
+    {
+        return $this->morphTo();
+    }
 }

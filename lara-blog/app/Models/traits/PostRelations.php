@@ -4,6 +4,7 @@ namespace App\Models\traits;
 
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Image;
 use App\Models\Like;
 use App\Models\Love;
 use App\Models\Tag;
@@ -39,5 +40,10 @@ trait PostRelations
     public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function image(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

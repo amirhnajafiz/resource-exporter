@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -14,6 +15,8 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(10)->create();
+        Category::factory(10)
+            ->has(Image::factory(1))
+            ->create();
     }
 }

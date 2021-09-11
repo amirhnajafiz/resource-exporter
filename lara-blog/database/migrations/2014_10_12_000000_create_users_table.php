@@ -22,9 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable(false);
             $table->integer('is_admin')->default(0);
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
-            $table->softDeletes()
-                ->after('updated_at');
         });
     }
 

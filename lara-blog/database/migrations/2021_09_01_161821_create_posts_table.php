@@ -19,9 +19,8 @@ class CreatePostsTable extends Migration
             $table->string('content', 1024);
             $table->string('slug', 64);
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
-            $table->softDeletes()
-                ->after('updated_at');
         });
     }
 

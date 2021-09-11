@@ -18,9 +18,8 @@ class CreateImagesTable extends Migration
             $table->string('title', 32);
             $table->string('alt', 32);
             $table->string('path', 1024);
+            $table->softDeletes();
             $table->timestamps();
-            $table->softDeletes()
-                ->after('updated_at');
         });
     }
 

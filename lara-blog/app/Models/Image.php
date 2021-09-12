@@ -18,6 +18,6 @@ class Image extends Model
 
     public function imageable(): \Illuminate\Database\Eloquent\Relations\MorphTo
     {
-        return $this->morphTo();
+        return $this->morphTo(__FUNCTION__, 'imageable_type', 'imageable_id');
     }
 }

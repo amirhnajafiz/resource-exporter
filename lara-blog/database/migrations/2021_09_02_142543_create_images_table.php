@@ -18,7 +18,8 @@ class CreateImagesTable extends Migration
             $table->string('title', 32);
             $table->string('alt', 32);
             $table->string('path', 1024);
-            $table->softDeletes();
+            $table->foreignId('imageable_id')->references('id')->on('images')->cascadeOnDelete();
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@ class ImageFactory extends Factory
     {
         return [
             'title' => $this->faker->name,
-            'alt' => $this->faker->words(rand(2,3)),
+            'alt' => $this->faker->word,
             'path' => $this->faker->imageUrl
         ];
     }

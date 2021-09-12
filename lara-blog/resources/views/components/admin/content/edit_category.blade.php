@@ -15,7 +15,7 @@
         </svg>
     </div>
     <div class="p-5 mt-2">
-        <form action="{{ route('categories.update', $category->id) }}" method="post">
+        <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="form-group row">
@@ -30,6 +30,21 @@
                         placeholder="Enter title ..."
                         value="{{ $category->title }}"
                     />
+                </div>
+            </div>
+            <div class="my-4">
+                @if($category->image)
+                    <img
+                        src="{{ str_starts_with($category->image->path, 'http') ? $category->image->path : asset('storage/' . $category->image->path) }}"
+                        alt="{{ $category->image->alt }}" width="200"/>
+                @else
+                    <div class="h4">No image</div>
+                @endif
+            </div>
+            <div class="form-group row">
+                <div class="d-inline-block col-12">
+                    <label for="categories" class="form-label">Category image (optional)</label>
+                    <input type="file" class="form-control" name="file" />
                 </div>
             </div>
             <div class="text-center mt-5">

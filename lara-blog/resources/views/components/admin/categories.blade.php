@@ -56,7 +56,7 @@
                 <td>
                     @if($categories[$i]->image)
                         <img
-                            src="{{ str_starts_with($post->image->path, 'http') ? $post->image->path : asset('storage/' . $post->image->path) }}"
+                            src="{{ str_starts_with($categories[$i]->image->path, 'http') ? $categories[$i]->image->path : asset('storage/' . $categories[$i]->image->path) }}"
                             alt="{{ $categories[$i]->image->alt }}" width="20"/>
                     @else
                         <span>

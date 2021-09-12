@@ -22,9 +22,12 @@ trait Update
         ]);
 
         if ($request->file('file')) {
-            $oldName = isset($post->image) ? $post->image->path : '';
+            $oldName = $post->image ? $post->image->path : '';
             $name = $post->id . "_image." . $request->file('file')->extension();
-            $this->replaceFile('posts/', $name, $request->file('file', $oldName));
+            $this->replaceFile('posts/', $name, $request->file('file'), $oldName);
+            $post->image()->update([
+                'path' => 'posts/' . $name
+            ]);
         }
 
         $post->tags()->sync($validated['tags_id']);

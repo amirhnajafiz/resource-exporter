@@ -99,11 +99,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        $category = Category::query()->find($id)->update($request->all());
+        $category = Category::query()->find($id);
+        $category->update($request->all());
         if ($request->file('file')) {
-            $oldName = isset($category->image) ? $category->image->path : '';
+            $oldName = $category->image ? $category->image->path : '';
             $name = $category->id . "_image." . $request->file('file')->extension();
-            $this->replaceFile('posts/', $name, $request->file('file', $oldName));
+            $this->replaceFile('categories/', $name, $request->file('file'), $oldName);
+            $category->image()->update([
+                'path' => 'categories/' . $name
+            ]);
         }
         return redirect()->route('categories.index');
     }

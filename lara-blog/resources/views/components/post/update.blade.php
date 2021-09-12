@@ -12,7 +12,7 @@
             <x-error-box></x-error-box>
         @endif
         <div class="p-5 mt-2">
-            <form action="{{ route('update.post') }}" method="post">
+            <form action="{{ route('update.post') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::id() }}" />
@@ -64,6 +64,21 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                </div>
+                <div class="my-4">
+                    @if($post->image)
+                        <img
+                            src="{{ str_starts_with($post->image->path, 'http') ? $post->image->path : asset('storage/' . $post->image->path) }}"
+                            alt="{{ $post->image->alt }}" width="200"/>
+                    @else
+                        <div class="h4">No image</div>
+                    @endif
+                </div>
+                <div class="form-group row">
+                    <div class="d-inline-block col-12">
+                        <label for="categories" class="form-label">Category image (optional)</label>
+                        <input type="file" class="form-control" name="file" />
                     </div>
                 </div>
                 <div class="text-center mt-5">

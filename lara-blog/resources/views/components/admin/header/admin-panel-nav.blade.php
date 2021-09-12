@@ -18,13 +18,13 @@
                     Users
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('admin.tag') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.tag') }}">
+            <li class="nav-item {{ request()->routeIs('tags.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('tags.index') }}">
                     Tags
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('admin.categories') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.categories') }}">
+            <li class="nav-item {{ request()->routeIs('categories.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('categories.index') }}">
                     Categories
                 </a>
             </li>

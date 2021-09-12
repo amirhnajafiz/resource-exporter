@@ -10,7 +10,7 @@
         @endif
         <div class="p-5 mt-1">
             @if($post->image)
-                <img src="{{ $post->image->path }}" alt="{{ $post->image->alt }}" width="200" />
+                <x-post.body.image-box :post="$post"></x-post.body.image-box>
             @endif
             <x-post.body.content-box :post="$post"></x-post.body.content-box>
             <x-post.body.features-bar :post="$post" :type="$type"></x-post.body.features-bar>

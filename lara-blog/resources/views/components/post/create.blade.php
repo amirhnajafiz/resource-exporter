@@ -66,7 +66,9 @@
                         <div>
                             <select id="categories" class="form-select w-100" size="3" name="categories_id[]" multiple>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    <option value="{{ $category->id }}">
+                                        {{ $category->title }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>

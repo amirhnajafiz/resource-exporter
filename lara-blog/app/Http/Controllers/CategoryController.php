@@ -28,22 +28,24 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
-        //
+        return view('components.admin.content.create_category')
+            ->with('title', 'category - create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        Category::query()->create($request->all());
+        return redirect()->route('categories.index');
     }
 
     /**

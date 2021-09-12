@@ -1,8 +1,13 @@
 @extends('components.admin.main')
 
 @section('context')
-    <div class="h4">
-        Categories
+    <div class="d-flex justify-content-between mb-2">
+        <div class="h4">
+            Categories
+        </div>
+        <a class="btn btn-success" href="{{ route('categories.create') }}">
+            Create a new category
+        </a>
     </div>
     <table class="table table-hover">
         <thead class="thead-dark">

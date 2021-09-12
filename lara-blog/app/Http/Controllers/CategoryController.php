@@ -56,7 +56,7 @@ class CategoryController extends Controller
             $category->image()->create([
                 'title' => $request->input('title'),
                 'alt' => $category->slug,
-                'path' => \Illuminate\Support\Facades\URL::to('/') . '/storage/categories/' . $name
+                'path' => 'categories/' . $name
             ]);
         }
 

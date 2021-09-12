@@ -24,7 +24,7 @@ trait CreatePost
             $post->image()->create([
                 'title' => $validated['title'],
                 'alt' => $post->slug,
-                'path' => \Illuminate\Support\Facades\URL::to('/') . '/storage/posts/' . $name
+                'path' => 'posts/' . $name
             ]);
         }
 

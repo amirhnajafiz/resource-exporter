@@ -6,7 +6,8 @@
       <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/CreatePost.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/CreatePost.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/content/create_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/content/create_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/image-box.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/image-box.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +201,8 @@
       <workItem from="1631253797718" duration="4795000" />
       <workItem from="1631343175650" duration="33000" />
       <workItem from="1631367477317" duration="7433000" />
-      <workItem from="1631421201757" duration="16186000" />
+      <workItem from="1631421201757" duration="16427000" />
+      <workItem from="1631445707305" duration="541000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

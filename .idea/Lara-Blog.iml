@@ -119,6 +119,9 @@
       <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/maximebf/debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/lara-blog/vendor/barryvdh/laravel-debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

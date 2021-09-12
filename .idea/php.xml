@@ -113,6 +113,9 @@
       <path value="$PROJECT_DIR$/lara-blog/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/lara-blog/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/lara-blog/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/lara-blog/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/lara-blog/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/lara-blog/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">

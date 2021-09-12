@@ -13,6 +13,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers
+ */
 class CategoryController extends Controller
 {
     use FileCreate, FileDestroy, FileReplace;
@@ -69,11 +73,14 @@ class CategoryController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function show($id)
     {
-        //
+        $category = Category::query()->findOrFail($id);
+        return view('components.public.category')
+            ->with('category', $category)
+            ->with('title', 'category - view');
     }
 
     /**

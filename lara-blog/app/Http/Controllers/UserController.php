@@ -15,14 +15,25 @@ use App\Http\Controllers\traits\user\view\PasswordView;
 use App\Http\Controllers\traits\user\view\SaveView;
 use App\Http\Controllers\traits\user\view\UpdateView;
 use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class UserController
+ * @package App\Http\Controllers
+ */
 class UserController extends Controller
 {
+    // Traits
     use Register, Login, Logout, Update, ChangePassword;
     use Love, Like, Save, Comment;
     use UpdateView, PasswordView, SaveView;
 
+    /**
+     * @return Application|Factory|View
+     */
     public function index()
     {
         $users = User::all();
@@ -31,6 +42,9 @@ class UserController extends Controller
             ->with('title', 'users');
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function dashboard()
     {
         return view('components.user.dashboard')

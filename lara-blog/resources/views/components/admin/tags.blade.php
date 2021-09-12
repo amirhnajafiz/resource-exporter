@@ -25,7 +25,9 @@
                     {{ $i + 1 }}
                 </th>
                 <td>
-                    {{ $tags[$i]->title }}
+                    <a href="{{ route('tags.show', $tags[$i]->id) }}" target="_blank">
+                        {{ $tags[$i]->title }}
+                    </a>
                 </td>
                 <td>
                     {{ $tags[$i]->slug }}

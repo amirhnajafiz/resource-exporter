@@ -12,12 +12,24 @@ use App\Http\Controllers\traits\post\crud\Search;
 use App\Http\Controllers\traits\post\crud\Update;
 use App\Http\Controllers\traits\post\view\UpdateView;
 use App\Models\Post;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class PostController
+ * @package App\Http\Controllers
+ */
 class PostController extends Controller
 {
+    // Traits
     use Create, Delete, Force, Restore, Update, Search, UpdateView, CreateView, AllPosts;
 
+    /**
+     * @return Application|Factory|View
+     */
     public function index()
     {
         $posts = Post::all();
@@ -26,6 +38,10 @@ class PostController extends Controller
             ->with('title', 'public');
     }
 
+    /**
+     * @param int $id
+     * @return Application|Factory|View
+     */
     public function viewpost($id = -1)
     {
         $post = Post::query()->findOrFail($id);
@@ -35,6 +51,10 @@ class PostController extends Controller
             ->with('title', 'post - view');
     }
 
+    /**
+     * @param $id
+     * @return Application|Factory|View|RedirectResponse
+     */
     public function viewtrash($id)
     {
         if ($id != Auth::id()) {

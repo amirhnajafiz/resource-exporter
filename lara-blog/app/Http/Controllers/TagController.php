@@ -10,6 +10,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * Class TagController
+ * @package App\Http\Controllers
+ */
 class TagController extends Controller
 {
     /**
@@ -52,11 +56,14 @@ class TagController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function show($id)
     {
-        //
+        $tag = Tag::query()->findOrFail($id);
+        return view('components.public.tag')
+            ->with('tag', $tag)
+            ->with('title', 'tag - view');
     }
 
     /**

@@ -18,13 +18,13 @@
                     Users
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('login.page') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('login.page') }}">
+            <li class="nav-item {{ request()->routeIs('admin.tag') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.tag') }}">
                     Tags
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('login.page') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('login.page') }}">
+            <li class="nav-item {{ request()->routeIs('admin.categories') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.categories') }}">
                     Categories
                 </a>
             </li>

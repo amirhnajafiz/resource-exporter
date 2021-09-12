@@ -116,4 +116,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
         ->name('admin.dash');
+
+    Route::get('admin/tags', [\App\Http\Controllers\TagController::class, 'index'])
+        ->name('admin.tag');
+
+    Route::get('admin/categories', [\App\Http\Controllers\CategoryController::class, 'index'])
+        ->name('admin.categories');
 });

@@ -19,9 +19,8 @@
             </svg>
         </div>
         <div class="p-5 mt-2">
-            <form action="{{ route('create.post') }}" method="post">
+            <form action="{{ route('create.post') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('put')
                 <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::id() }}"/>
                 <div class="form-group row">
                     <div class="d-inline-block col-12">
@@ -72,6 +71,12 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="d-inline-block col-12">
+                        <label for="categories" class="form-label">Post image (optional)</label>
+                        <input type="file" class="form-control" name="file" />
                     </div>
                 </div>
                 <div class="text-center mt-5">

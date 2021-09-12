@@ -17,6 +17,7 @@ class Post extends Model
         'title',
         'content',
         'slug',
+        'allow_comments',
         'user_id'
     ];
 

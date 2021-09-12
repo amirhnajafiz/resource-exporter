@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/public/category.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/public/tag.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/tags.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/tags.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/database/migrations/2021_09_01_161821_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/database/migrations/2021_09_01_161821_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/update.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +207,7 @@
       <workItem from="1631367477317" duration="7433000" />
       <workItem from="1631421201757" duration="16427000" />
       <workItem from="1631445707305" duration="6172000" />
-      <workItem from="1631460629857" duration="1952000" />
+      <workItem from="1631460629857" duration="2470000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

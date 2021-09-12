@@ -81,6 +81,12 @@
                         <input type="file" class="form-control" name="file" />
                     </div>
                 </div>
+                <div class="form-group row">
+                    <div class="d-inline-block col-12">
+                        <label for="allow">Enable Comments:</label>
+                        <input id="allow" type="checkbox" name="allow_comments" />
+                    </div>
+                </div>
                 <div class="text-center mt-5">
                     <button type="submit" class="btn btn-primary mr-1">Change</button>
                     <a type="button" href="{{ route('view.post', $post->id) }}" class="btn btn-danger ml-1">Cancel</a>

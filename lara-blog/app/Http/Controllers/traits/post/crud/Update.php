@@ -30,6 +30,16 @@ trait Update
             ]);
         }
 
+        if ($request->has('allow_comments')) {
+            $allow_comments = 1;
+        } else {
+            $allow_comments = 0;
+        }
+
+        $post->update([
+            'allow_comments' => $allow_comments
+        ]);
+
         $post->tags()->sync($validated['tags_id']);
         $post->categories()->sync($validated['categories_id']);
 

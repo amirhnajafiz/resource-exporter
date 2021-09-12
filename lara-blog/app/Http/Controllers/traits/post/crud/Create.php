@@ -27,6 +27,12 @@ trait Create
             ]);
         }
 
+        if ($request->has('allow_comments')) {
+            $post->update([
+                'allow_comments' => 1
+            ]);
+        }
+
         $post->tags()->sync($validated['tags_id']);
         $post->categories()->sync($validated['categories_id']);
 

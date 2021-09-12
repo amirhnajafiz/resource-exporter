@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 1024);
             $table->string('content', 2048);
             $table->string('slug', 2048);
+            $table->integer('allow_comments')->default(0);
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();

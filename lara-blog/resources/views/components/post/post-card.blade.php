@@ -19,7 +19,9 @@
             @endif
             <x-post.body.tags :post="$post"></x-post.body.tags>
             <x-post.body.categories :post="$post"></x-post.body.categories>
-            <x-post.body.comment-bar :post="$post"></x-post.body.comment-bar>
+            @if($post->allow_comments == 1)
+                <x-post.body.comment-bar :post="$post"></x-post.body.comment-bar>
+            @endif
         </div>
     </div>
 </div>

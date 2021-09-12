@@ -1,9 +1,16 @@
 @extends('components.admin.main')
 
 @section('context')
-    <div class="mb-2">
+    <div class="d-flex justify-content-between mb-2">
         <div class="h4">
             Posts
+        </div>
+        <div class="rounded bg-dark text-light">
+            <a href="{{ route('admin.posts', ($offset - 25)) }}" class="btn text-light">Prev</a>
+            <small class="badge">
+                {{ $offset }}
+            </small>
+            <a href="{{ route('admin.posts', ($offset + 25)) }}" class="btn text-light">Next</a>
         </div>
     </div>
     <table class="table table-hover">

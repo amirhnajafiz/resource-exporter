@@ -118,7 +118,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/users', [UserController::class, 'index'])
         ->name('admin.users');
 
-    Route::get('admin/posts', [PostController::class, 'allPosts'])
+    Route::get('admin/posts/{offset?}', [PostController::class, 'allPosts'])
         ->name('admin.posts');
 
     Route::delete('users/{id}/delete', [\App\Http\Controllers\AdminController::class, 'deleteUser'])

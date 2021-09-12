@@ -120,4 +120,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('admin/posts', [PostController::class, 'allPosts'])
         ->name('admin.posts');
+
+    Route::delete('users/{id}/delete', [\App\Http\Controllers\AdminController::class, 'deleteUser'])
+        ->name('delete.user');
 });

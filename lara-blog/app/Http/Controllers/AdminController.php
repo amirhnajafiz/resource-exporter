@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,5 +11,11 @@ class AdminController extends Controller
     {
         return view('components.admin.dashboard')
             ->with('title', 'admin - panel');
+    }
+
+    public function deleteUser($id): \Illuminate\Http\RedirectResponse
+    {
+        User::query()->find($id)->forceDelete();
+        return redirect()->route('admin.users');
     }
 }

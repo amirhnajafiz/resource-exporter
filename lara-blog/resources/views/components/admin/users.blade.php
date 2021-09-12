@@ -32,7 +32,7 @@
                     {{ $users[$i]->phone }}
                 </td>
                 <td class="d-flex justify-content-start">
-                    <form action="{{ route('tags.destroy', $users[$i]->id) }}" method="post">
+                    <form action="{{ route('delete.user', $users[$i]->id) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-light text-danger">

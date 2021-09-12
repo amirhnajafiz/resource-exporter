@@ -35,9 +35,14 @@ trait Delete
             $post->delete();
             return redirect()->route('dashboard');
         } else {
-            return redirect()
-                ->back()
-                ->withErrors(['message' => 'You can only delete your own posts.']);
+            if (Auth::user()->is_admin == 1) {
+                $post->forceDelete();
+                return redirect()->route('admin.posts');
+            } else {
+                return redirect()
+                    ->back()
+                    ->withErrors(['message' => 'You can only delete your own posts.']);
+            }
         }
     }
 }

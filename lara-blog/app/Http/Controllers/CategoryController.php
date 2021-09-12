@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\file\FileCreate;
 use App\Http\Controllers\traits\file\FileDestroy;
+use App\Http\Controllers\traits\file\FileReplace;
 use App\Models\Category;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -14,7 +15,7 @@ use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
-    use FileCreate, FileDestroy;
+    use FileCreate, FileDestroy, FileReplace;
 
     /**
      * Display a listing of the resource.
@@ -98,7 +99,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        Category::query()->find($id)->update($request->all());
+        $category = Category::query()->find($id)->update($request->all());
+        if ($request->file('file')) {
+            $oldName = isset($category->image) ? $category->image->path : '';
+            $name = $category->id . "_image." . $request->file('file')->extension();
+            $this->replaceFile('posts/', $name, $request->file('file', $oldName));
+        }
         return redirect()->route('categories.index');
     }
 

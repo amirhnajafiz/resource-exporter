@@ -42,6 +42,13 @@
                                 Saved
                             </a>
                         </li>
+                        @if(\Illuminate\Support\Facades\Auth::user()->is_admin == 1)
+                            <li class="nav-item {{ request()->routeIs('admin.dash') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.dash') }}">
+                                    Admin Panel
+                                </a>
+                            </li>
+                        @endif
                     @endif
                 </ul>
                 <form action="{{ route('search') }}" method="post" class="form-inline my-2 my-md-0">

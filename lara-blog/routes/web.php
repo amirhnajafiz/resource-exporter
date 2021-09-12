@@ -113,4 +113,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('tags', \App\Http\Controllers\TagController::class);
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+
+    Route::get('admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
+        ->name('admin.dash');
 });

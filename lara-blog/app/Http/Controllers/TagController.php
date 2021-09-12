@@ -63,11 +63,14 @@ class TagController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function edit($id)
     {
-        //
+        $tag = Tag::query()->find($id);
+        return view('components.admin.content.edit_tag')
+            ->with('tag', $tag)
+            ->with('title', 'tag - edit');
     }
 
     /**
@@ -75,11 +78,12 @@ class TagController extends Controller
      *
      * @param Request $request
      * @param  int  $id
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): RedirectResponse
     {
-        //
+        Tag::query()->find($id)->update($request->all());
+        return redirect()->route('tags.index');
     }
 
     /**

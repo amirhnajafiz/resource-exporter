@@ -63,11 +63,14 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function edit($id)
     {
-        //
+        $category = Category::query()->find($id);
+        return view('components.admin.content.edit_category')
+            ->with('category', $category)
+            ->with('title', 'edit - category');
     }
 
     /**
@@ -75,11 +78,12 @@ class CategoryController extends Controller
      *
      * @param Request $request
      * @param  int  $id
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): RedirectResponse
     {
-        //
+        Category::query()->find($id)->update($request->all());
+        return redirect()->route('categories.index');
     }
 
     /**

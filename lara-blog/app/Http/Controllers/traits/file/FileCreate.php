@@ -8,11 +8,6 @@ trait FileCreate
 {
     public function storeFile($root, $name, $content)
     {
-        $disk = Storage::build([
-            'driver' => 'local',
-            'root' => $root
-        ]);
-
-        $disk->put($name, $content);
+        Storage::disk('public')->putFileAs($root, $content, $name);
     }
 }

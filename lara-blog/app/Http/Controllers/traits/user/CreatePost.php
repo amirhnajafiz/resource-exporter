@@ -18,13 +18,13 @@ trait CreatePost
         $post = Post::query()->create($validated);
 
         if ($request->file('file')) {
-            $name = $post->id . "_" . $request->file('file')->getClientOriginalName();
+            $name = $post->id . "_image" . $request->file('file')->extension();
             $this->storeFile('posts', $name, $request->file('file'));
 
             $post->image()->create([
                 'title' => $validated['title'],
                 'alt' => $post->slug,
-                'path' => 'storage/public/' . $name
+                'path' => \Illuminate\Support\Facades\URL::to('/') . '/storage/posts/' . $name
             ]);
         }
 

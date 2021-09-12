@@ -14,30 +14,8 @@
             @if($post->user->id == \Illuminate\Support\Facades\Auth::id() && $type="view")
                 <x-post.body.modify-bar :post="$post"></x-post.body.modify-bar>
             @endif
-            <div>
-                <small>Tags: </small>
-                @forelse($post->tags as $tag)
-                    <span class="badge badge-primary">
-                        {{ '#' . $tag->title }}
-                    </span>
-                @empty
-                    <span>
-                        No tags
-                    </span>
-                @endforelse
-            </div>
-            <div>
-                <small>Categories: </small>
-                @forelse($post->categories as $category)
-                    <span class="badge badge-secondary">
-                        {{ $category->title }}
-                    </span>
-                @empty
-                    <span>
-                        No categories
-                    </span>
-                @endforelse
-            </div>
+            <x-post.body.tags :post="$post"></x-post.body.tags>
+            <x-post.body.categories :post="$post"></x-post.body.categories>
             <x-post.body.comment-bar :post="$post"></x-post.body.comment-bar>
         </div>
     </div>

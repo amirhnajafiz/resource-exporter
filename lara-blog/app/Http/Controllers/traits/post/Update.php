@@ -18,6 +18,9 @@ trait Update
             'content' => $validated['content']
         ]);
 
+        $post->tags()->sync($validated['tags_id']);
+        $post->categories()->sync($validated['categories_id']);
+
         $post->save();
 
         return redirect()->route('dashboard');

@@ -30,17 +30,21 @@ class CreatePostRequest extends FormRequest
         return [
             'title' => 'required|max:50|min:2',
             'content' => 'max:128|min:5',
-            'user_id' => 'exists:App\Models\User,id'
+            'user_id' => 'exists:App\Models\User,id',
+            'tags_id' => 'required|array',
+            'tags_id.*' => 'required|exists:App\Models\Tag,id',
+            'categories_id' => 'required|array',
+            'categories_id.*' => 'required|exists:App\Models\Category,id'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'required' => 'You have to set a title.',
+            'required' => 'You have to set :attribute.',
             'min' => 'The field :attribute is too short.',
             'max' => 'The field :attribute must be less than :size characters.',
-            'exists' => 'No user found.'
+            'exists' => 'No :attribute found.'
         ];
     }
 }

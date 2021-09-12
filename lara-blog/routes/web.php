@@ -49,10 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('logout', [UserController::class, 'logout'])
         ->name('logout');
 
-    Route::get('create', function () {
-        return view('components.post.create')
-            ->with('title', 'create post');
-    })->name('create.post.page');
+    Route::get('create', [PostController::class, 'createview'])
+        ->name('create.post.page');
 
     Route::put('create', [UserController::class, 'create'])
         ->name('create.post');

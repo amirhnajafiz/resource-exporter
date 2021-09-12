@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\traits\post;
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,6 +31,8 @@ trait UpdateView
         $validated = $validator->validate();
 
         $post = Post::query()->find($validated['id']);
+        $tags = Tag::all();
+        $categories = Category::all();
 
         if ($post->user->id != Auth::id())
         {
@@ -38,6 +42,8 @@ trait UpdateView
         } else {
             return view('components.post.update')
                 ->with('post', $post)
+                ->with('tags', $tags)
+                ->with('categories', $categories)
                 ->with('title', 'post - edit - ' . $post->user->name);
         }
     }

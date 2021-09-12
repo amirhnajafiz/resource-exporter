@@ -42,6 +42,30 @@
                         >{{ $post->content }}</textarea>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <div class="d-inline-block col-12">
+                        <label for="tags" class="form-label">Tags</label>
+                        <div>
+                            <select id="tags" class="form-select w-100" size="3" name="tags_id[]" multiple>
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="d-inline-block col-12">
+                        <label for="categories" class="form-label">Categories</label>
+                        <div>
+                            <select id="categories" class="form-select w-100" size="3" name="categories_id[]" multiple>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-center mt-5">
                     <button type="submit" class="btn btn-primary mr-1">Change</button>
                     <a type="button" href="{{ route('view.post', $post->id) }}" class="btn btn-danger ml-1">Cancel</a>

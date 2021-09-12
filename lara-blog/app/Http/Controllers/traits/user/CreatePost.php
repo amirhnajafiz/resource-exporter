@@ -11,7 +11,10 @@ trait CreatePost
     {
         $validated = $request->validated();
 
-        Post::query()->create($validated);
+        $post = Post::query()->create($validated);
+
+        $post->tags()->sync($validated['tags_id']);
+        $post->categories()->sync($validated['categories_id']);
 
         return redirect()->route('dashboard');
     }

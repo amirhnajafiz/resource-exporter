@@ -33,17 +33,21 @@ class UpdatePostRequest extends FormRequest
             'title' => 'required|max:50|min:2',
             'content' => 'max:1024|min:5',
             'user_id' => 'exists:App\Models\User,id',
-            'post_id' => 'exists:App\Models\Post,id'
+            'post_id' => 'exists:App\Models\Post,id',
+            'tags_id' => 'required|array',
+            'tags_id.*' => 'required|exists:App\Models\Tag,id',
+            'categories_id' => 'required|array',
+            'categories_id.*' => 'required|exists:App\Models\Category,id'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'required' => 'You have to set a title.',
+            'required' => 'You have to set :attribute.',
             'min' => 'The field :attribute is too short.',
             'max' => 'The field :attribute must be less than :size characters.',
-            'exists' => 'Not found.'
+            'exists' => 'No :attribute found.'
         ];
     }
 }

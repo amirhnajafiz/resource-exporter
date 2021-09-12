@@ -16,6 +16,7 @@
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
             <th scope="col">Options</th>
+            <th scope="col">Image</th>
         </tr>
         </thead>
         <tbody>
@@ -46,6 +47,14 @@
                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                         </svg>
                     </a>
+                </td>
+                <td>
+                    @if($categories[$i]->image)
+                        <img src="{{ $categories[$i]->image->path }}" alt="{{ $categories[$i]->image->alt }}" width="20" />
+                    @else
+                        <span>
+                        </span>
+                    @endif
                 </td>
             </tr>
         @endfor

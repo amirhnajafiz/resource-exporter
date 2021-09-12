@@ -18,7 +18,7 @@ trait CreatePost
         $post = Post::query()->create($validated);
 
         if ($request->file('file')) {
-            $name = $post->id . "_image" . $request->file('file')->extension();
+            $name = $post->id . "_image." . $request->file('file')->extension();
             $this->storeFile('posts', $name, $request->file('file'));
 
             $post->image()->create([

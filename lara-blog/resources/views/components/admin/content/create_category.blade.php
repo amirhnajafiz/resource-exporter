@@ -15,7 +15,7 @@
         </svg>
     </div>
     <div class="p-5 mt-2">
-        <form action="{{ route('categories.store') }}" method="post">
+        <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
                 <div class="d-inline-block col-12">
@@ -29,6 +29,12 @@
                         placeholder="Enter title ..."
                         value="{{ old('title') }}"
                     />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="d-inline-block col-12">
+                    <label for="categories" class="form-label">Category image (optional)</label>
+                    <input type="file" class="form-control" name="file" />
                 </div>
             </div>
             <div class="text-center mt-5">

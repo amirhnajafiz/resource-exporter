@@ -8,13 +8,13 @@
                     </svg>
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('login.page') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('login.page') }}">
+            <li class="nav-item {{ request()->routeIs('admin.posts') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.posts') }}">
                     Posts
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('login.page') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('login.page') }}">
+            <li class="nav-item {{ request()->routeIs('admin.users') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.users') }}">
                     Users
                 </a>
             </li>

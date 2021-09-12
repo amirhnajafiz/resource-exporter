@@ -12,12 +12,21 @@ use App\Http\Controllers\traits\user\Love;
 use App\Http\Controllers\traits\user\Register;
 use App\Http\Controllers\traits\user\Save;
 use App\Http\Controllers\traits\user\Update;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     use Register, Login, Logout, CreatePost, Update, ChangePassword;
     use Love, Like, Save, Comment;
+
+    public function index()
+    {
+        $users = User::all();
+        return view('components.admin.users')
+            ->with('users', $users)
+            ->with('title', 'users');
+    }
 
     public function dashboard()
     {

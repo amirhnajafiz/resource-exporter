@@ -114,4 +114,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
         ->name('admin.dash');
+
+    Route::get('admin/users', [UserController::class, 'index'])
+        ->name('admin.users');
+
+    Route::get('admin/posts', [PostController::class, 'allPosts'])
+        ->name('admin.posts');
 });

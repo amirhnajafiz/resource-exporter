@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\traits\post\AllPosts;
 use App\Http\Controllers\traits\post\CreateView;
 use App\Http\Controllers\traits\post\Delete;
 use App\Http\Controllers\traits\post\Force;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    use Delete, Force, Restore, Update, Search, UpdateView, CreateView;
+    use Delete, Force, Restore, Update, Search, UpdateView, CreateView, AllPosts;
 
     public function index()
     {

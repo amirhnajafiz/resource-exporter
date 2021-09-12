@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\traits\post;
+namespace App\Http\Controllers\traits\post\view;
 
 use App\Models\Category;
 use App\Models\Tag;

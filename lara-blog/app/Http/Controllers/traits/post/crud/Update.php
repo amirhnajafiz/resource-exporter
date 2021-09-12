@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\traits\post;
+namespace App\Http\Controllers\traits\post\crud;
 
 use App\Http\Controllers\traits\file\FileReplace;
 use App\Http\Requests\UpdatePostRequest;

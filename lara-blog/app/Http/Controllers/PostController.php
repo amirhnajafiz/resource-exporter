@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\post\AllPosts;
-use App\Http\Controllers\traits\post\CreateView;
-use App\Http\Controllers\traits\post\Delete;
-use App\Http\Controllers\traits\post\Force;
-use App\Http\Controllers\traits\post\Restore;
-use App\Http\Controllers\traits\post\Search;
-use App\Http\Controllers\traits\post\Update;
-use App\Http\Controllers\traits\post\UpdateView;
+use App\Http\Controllers\traits\post\view\CreateView;
+use App\Http\Controllers\traits\post\crud\Delete;
+use App\Http\Controllers\traits\post\crud\Force;
+use App\Http\Controllers\traits\post\crud\Restore;
+use App\Http\Controllers\traits\post\crud\Search;
+use App\Http\Controllers\traits\post\crud\Update;
+use App\Http\Controllers\traits\post\view\UpdateView;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 

@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\traits\post;
+namespace App\Http\Controllers\traits\post\crud;
 
-use App\Http\Controllers\traits\file\FileDestroy;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-trait Force
+trait Restore
 {
-    use FileDestroy;
-
-    public function force($id): \Illuminate\Http\RedirectResponse
+    public function restore($id): \Illuminate\Http\RedirectResponse
     {
         $rules = [
             'id' => 'exists:App\Models\Post,id'
@@ -35,14 +32,12 @@ trait Force
 
         if ($post->user->id == Auth::id())
         {
-            $image = $post->image->path;
-            $this->destroyFile($image);
-            $post->forceDelete();
+            $post->restore();
             return redirect()->route('trash', Auth::id());
         } else {
             return redirect()
                 ->back()
-                ->withErrors(['message' => 'You can only delete your own posts.']);
+                ->withErrors(['message' => 'You can only restore your own posts.']);
         }
     }
 }

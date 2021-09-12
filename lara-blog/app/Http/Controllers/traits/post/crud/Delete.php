@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\traits\post;
+namespace App\Http\Controllers\traits\post\crud;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\traits\user;
+namespace App\Http\Controllers\traits\user\features;
 
 use Illuminate\Support\Facades\Auth;
 

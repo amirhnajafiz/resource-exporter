@@ -1,33 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\traits\user;
+namespace App\Http\Controllers\traits\user\features;
 
 use Illuminate\Support\Facades\Auth;
 
-trait Save
+trait Love
 {
-    public function save($id): \Illuminate\Http\JsonResponse
+    public function love($id): \Illuminate\Http\JsonResponse
     {
-        $result = \App\Models\Save::query()
+        $result = \App\Models\Love::query()
             ->where('user_id', '=', Auth::id())
             ->where('post_id', '=', $id)
             ->get();
 
-        $status = 'Unsaved';
-
         if (count($result) > 0) {
             $result[0]->delete();
         } else {
-            \App\Models\Save::query()->create([
+            \App\Models\Love::query()->create([
                 'user_id' => Auth::id(),
                 'post_id' => $id
             ]);
-            $status = 'Saved';
         }
 
         return response()->json([
-            'status'=> $status
+            'total'=> \App\Models\Post::query()->find($id)->loves->count()
         ]);
     }
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\traits\user;
+namespace App\Http\Controllers\traits\user\crud;
 
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;

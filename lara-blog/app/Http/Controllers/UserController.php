@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\traits\user\ChangePassword;
-use App\Http\Controllers\traits\user\Comment;
-use App\Http\Controllers\traits\user\CreatePost;
-use App\Http\Controllers\traits\user\Like;
+use App\Http\Controllers\traits\user\crud\ChangePassword;
+use App\Http\Controllers\traits\user\features\Comment;
+use App\Http\Controllers\traits\user\features\Like;
 use App\Http\Controllers\traits\user\Login;
 use App\Http\Controllers\traits\user\Logout;
-use App\Http\Controllers\traits\user\Love;
-use App\Http\Controllers\traits\user\Register;
-use App\Http\Controllers\traits\user\Save;
-use App\Http\Controllers\traits\user\Update;
+use App\Http\Controllers\traits\user\features\Love;
+use App\Http\Controllers\traits\user\crud\Register;
+use App\Http\Controllers\traits\user\features\Save;
+use App\Http\Controllers\traits\user\crud\Update;
+use App\Http\Controllers\traits\user\view\PasswordView;
+use App\Http\Controllers\traits\user\view\SaveView;
+use App\Http\Controllers\traits\user\view\UpdateView;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    use Register, Login, Logout, CreatePost, Update, ChangePassword;
+    use Register, Login, Logout, Update, ChangePassword;
     use Love, Like, Save, Comment;
+    use UpdateView, PasswordView, SaveView;
 
     public function index()
     {
@@ -33,38 +36,5 @@ class UserController extends Controller
         return view('components.user.dashboard')
             ->with('user', Auth::user())
             ->with('title' , 'dashboard');
-    }
-
-    public function updateview($id)
-    {
-        if ($id != Auth::id()) {
-            return redirect()
-                ->back()
-                ->withErrors(['message' => 'You can\'t access here.']);
-        } else {
-            return view('components.user.change')
-                ->with('user', Auth::user())
-                ->with('title', 'profile');
-        }
-    }
-
-    public function passwordview($id)
-    {
-        if ($id != Auth::id()) {
-            return redirect()
-                ->back()
-                ->withErrors(['message' => 'You can\'t access here.']);
-        } else {
-            return view('components.user.password_change')
-                ->with('user', Auth::user())
-                ->with('title', 'password - change');
-        }
-    }
-
-    public function viewsave()
-    {
-        return view('components.user.save')
-            ->with('title', 'saved')
-            ->with('user', Auth::user());
     }
 }

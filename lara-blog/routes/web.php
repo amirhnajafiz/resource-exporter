@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('create', [PostController::class, 'createview'])
         ->name('create.post.page');
 
-    Route::post('create', [UserController::class, 'create'])
+    Route::post('create', [PostController::class, 'create'])
         ->name('create.post');
 
     Route::get('post/{id?}', [PostController::class, 'viewpost'])

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\traits\user;
+namespace App\Http\Controllers\traits\post\crud;
 
 use App\Http\Controllers\traits\file\FileCreate;
 use App\Http\Requests\CreatePostRequest;
-use App\Models\Image;
 use App\Models\Post;
 
-trait CreatePost
+trait Create
 {
     use FileCreate;
 

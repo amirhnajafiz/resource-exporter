@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\traits\post;
 
+use App\Http\Controllers\traits\file\FileDestroy;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 trait Force
 {
+    use FileDestroy;
+
     public function force($id): \Illuminate\Http\RedirectResponse
     {
         $rules = [
@@ -32,6 +35,8 @@ trait Force
 
         if ($post->user->id == Auth::id())
         {
+            $image = $post->image->path;
+            $this->destroyFile($image);
             $post->forceDelete();
             return redirect()->route('trash', Auth::id());
         } else {

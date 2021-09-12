@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\file\FileCreate;
+use App\Http\Controllers\traits\file\FileDestroy;
 use App\Models\Category;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -13,7 +14,7 @@ use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
-    use FileCreate;
+    use FileCreate, FileDestroy;
 
     /**
      * Display a listing of the resource.
@@ -109,6 +110,8 @@ class CategoryController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
+        $image = Category::query()->find($id)->image->path;
+        $this->destroyFile($image);
         Category::query()->find($id)->delete();
         return redirect()->route('categories.index');
     }

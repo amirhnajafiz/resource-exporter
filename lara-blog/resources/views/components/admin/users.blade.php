@@ -23,7 +23,9 @@
                     {{ $i + 1 }}
                 </th>
                 <td>
-                    {{ $users[$i]->name }}
+                    <a href="{{ route('user.view', $users[$i]->id) }}" target="_blank">
+                        {{ $users[$i]->name }}
+                    </a>
                 </td>
                 <td>
                     {{ $users[$i]->email }}

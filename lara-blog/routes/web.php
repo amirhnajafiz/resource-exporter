@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -105,6 +106,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('search', [PostController::class, 'search'])
         ->name('search');
+
+    Route::get('user/view/{id}', [AdminController::class, 'viewUser'])
+        ->name('user.view');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -112,7 +116,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 
-    Route::get('admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
+    Route::get('admin/dashboard', [AdminController::class, 'index'])
         ->name('admin.dash');
 
     Route::get('admin/users', [UserController::class, 'index'])
@@ -121,6 +125,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/posts/{offset?}', [PostController::class, 'allPosts'])
         ->name('admin.posts');
 
-    Route::delete('users/{id}/delete', [\App\Http\Controllers\AdminController::class, 'deleteUser'])
+    Route::delete('users/{id}/delete', [AdminController::class, 'deleteUser'])
         ->name('delete.user');
 });

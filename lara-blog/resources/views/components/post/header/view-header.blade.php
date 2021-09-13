@@ -4,7 +4,9 @@
 >
     {{ $post->title }}<br />
     <small>
-        {{ "Posted by: " . $post->user->name }}
+        <a href="{{ route('user.view', $post->user->id) }}" target="_blank">
+            {{ "Posted by:" . $post->user->name }}
+        </a>
     </small>
     <div class="d-flex justify-content-between mt-4 px-3">
         <small class="blockquote-footer" style="font-size: 0.5em">

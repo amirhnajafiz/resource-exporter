@@ -33,4 +33,16 @@ class AdminController extends Controller
         User::query()->find($id)->forceDelete();
         return redirect()->route('admin.users');
     }
+
+    /**
+     * @param $id
+     * @return Application|Factory|View
+     */
+    public function viewUser($id)
+    {
+        $user = User::query()->findOrFail($id);
+        return view('components.user.profile')
+            ->with('user', $user)
+            ->with('title', 'user - profile');
+    }
 }

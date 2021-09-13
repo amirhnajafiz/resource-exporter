@@ -110,7 +110,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('comment', [UserController::class, 'comment'])
         ->name('comment');
 
-    Route::post('search', [PostController::class, 'search'])
+    Route::get('search/{offset?}', [PostController::class, 'search'])
         ->name('search');
 
     Route::get('user/view/{id}', [AdminController::class, 'viewUser'])

@@ -19,7 +19,7 @@
     <body class="text-light bg-black">
         <x-header></x-header>
         <x-cloud></x-cloud>
-        <div class="container-fluid p-0" style="margin-top: 100px; margin-bottom: 20px;">
+        <div class="container-fluid p-0">
             <div>
                 @yield('content')
             </div>

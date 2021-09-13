@@ -16,6 +16,23 @@
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
         </div>
+        <hr />
+        <div class="d-flex m-auto my-2 w-25 justify-content-center align-items-center rounded bg-dark text-light">
+            <form action="{{ route('search', ($offset - 5)) }}" method="get">
+                @csrf
+                <input type="hidden" name="keyword" value="{{ $keyword }}" />
+                <input type="submit" class="btn text-light" value="Prev" />
+            </form>
+            <small class="badge badge-light">
+                {{ $offset }}
+            </small>
+            <form action="{{ route('search', ($offset + 5)) }}" method="get">
+                @csrf
+                <input type="hidden" name="keyword" value="{{ $keyword }}" />
+                <input type="submit" class="btn text-light" value="Next" />
+            </form>
+        </div>
+        <hr />
         @if($errors->any())
             <x-error-box></x-error-box>
         @endif
@@ -23,11 +40,8 @@
             @if(count($posts) > 0)
                 @foreach($posts as $post)
                     <x-post.post
-                        title="{{ $post->title }}"
-                        content="{{ preg_replace('/(<([^>]+)>)/', '', $post->content) }}"
-                        created="{{ $post->created_at }}"
-                        link="{{ $post->id }}"
-                        id="{{ $post->id }}"
+                        :post="$post"
+                        type="view"
                     ></x-post.post>
                 @endforeach
             @else

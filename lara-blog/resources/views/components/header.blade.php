@@ -56,7 +56,7 @@
                         @endif
                     @endif
                 </ul>
-                <form action="{{ route('search') }}" method="post" class="form-inline my-2 my-md-0">
+                <form action="{{ route('search') }}" method="get" class="form-inline my-2 my-md-0">
                     @csrf
                     <button type="submit" class="btn btn-dark text-light">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">

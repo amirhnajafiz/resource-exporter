@@ -18,6 +18,8 @@ class Post extends Model
         'content',
         'slug',
         'allow_comments',
+        'allow_download',
+        'published',
         'user_id'
     ];
 

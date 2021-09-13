@@ -11,13 +11,12 @@ use App\Http\Controllers\traits\post\crud\Force;
 use App\Http\Controllers\traits\post\crud\Restore;
 use App\Http\Controllers\traits\post\crud\Search;
 use App\Http\Controllers\traits\post\crud\Update;
+use App\Http\Controllers\traits\post\view\TrashView;
 use App\Http\Controllers\traits\post\view\UpdateView;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class PostController
@@ -26,7 +25,8 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     // Traits
-    use Create, Delete, Force, Restore, Update, Search, UpdateView, CreateView, AllPosts, PostImageDownload;
+    use Create, Delete, Force, Restore, Update, Search, AllPosts, PostImageDownload;
+    use TrashView, UpdateView, CreateView;
 
     /**
      * @return Application|Factory|View
@@ -50,23 +50,5 @@ class PostController extends Controller
         return view('components.post.postview')
             ->with('post', $post)
             ->with('title', 'post - view');
-    }
-
-    /**
-     * @param $id
-     * @return Application|Factory|View|RedirectResponse
-     */
-    public function viewtrash($id)
-    {
-        if ($id != Auth::id()) {
-            return redirect()
-                ->back()
-                ->withErrors(['message' => 'You can\'t access here.']);
-        } else {
-            $posts = Post::onlyTrashed()->where('user_id', '=', $id)->get();
-            return view('components.post.trash')
-                ->with('posts', $posts)
-                ->with('title', 'trash');
-        }
     }
 }

@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->where('published', '=', 1);
+        $users = User::all();
         return view('components.admin.users')
             ->with('users', $users)
             ->with('title', 'users');

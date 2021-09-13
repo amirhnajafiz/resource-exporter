@@ -86,7 +86,8 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <button type="submit" class="btn btn-success mr-1">Put</button>
+                    <button type="submit" name="submit" class="btn btn-success mr-1">Publish</button>
+                    <button type="submit" name="draft" class="btn btn-warning mr-1 ml-1">Draft</button>
                     <button type="reset" class="btn btn-danger ml-1">Reset</button>
                 </div>
             </form>

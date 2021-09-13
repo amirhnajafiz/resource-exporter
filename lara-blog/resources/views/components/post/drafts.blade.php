@@ -23,7 +23,7 @@
                 @foreach($posts as $post)
                     <x-post.post
                         :post="$post"
-                        type="trash"
+                        type="view"
                     ></x-post.post>
                 @endforeach
             @else

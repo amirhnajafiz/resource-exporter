@@ -27,6 +27,10 @@ trait Create
             ]);
         }
 
+        if ($request->has('draft')) {
+            $post->published = 0;
+        }
+
         if ($request->has('allow_comments')) {
             $post->update([
                 'allow_comments' => 1

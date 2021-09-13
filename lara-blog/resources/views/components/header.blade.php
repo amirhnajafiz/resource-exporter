@@ -42,6 +42,11 @@
                                 Saved
                             </a>
                         </li>
+                        <li class="nav-item {{ request()->routeIs('view.draft') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('view.draft', \Illuminate\Support\Facades\Auth::id()) }}">
+                                Drafts
+                            </a>
+                        </li>
                         @if(\Illuminate\Support\Facades\Auth::user()->is_admin == 1)
                             <li class="nav-item {{ request()->routeIs('admin.dash') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('admin.dash') }}">

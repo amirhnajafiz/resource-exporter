@@ -68,8 +68,8 @@
             </a>
         </div>
         <div class="p-5 mt-1">
-            @if(count($user->posts) > 0)
-                @foreach($user->posts as $post)
+            @if(count($user->posts->where('published', '=', 1)) > 0)
+                @foreach($user->posts->where('published', '=', 1) as $post)
                     <x-post.post
                         :post="$post"
                         type="view"

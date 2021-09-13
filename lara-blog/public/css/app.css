@@ -129,3 +129,7 @@ h6 {
     transition: all 0.3s ease-in-out
 }
 
+.bg-black {
+    background-color: #999999 !important;
+}
+

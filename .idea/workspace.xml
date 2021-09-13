@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/admin/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/index-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/index-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/view-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/view-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/user/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/layouts/main.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +210,7 @@
       <workItem from="1631445707305" duration="6172000" />
       <workItem from="1631460629857" duration="2809000" />
       <workItem from="1631512143180" duration="55000" />
-      <workItem from="1631521763498" duration="2303000" />
+      <workItem from="1631521763498" duration="4005000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

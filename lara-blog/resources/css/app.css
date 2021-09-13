@@ -131,3 +131,7 @@ h6 {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
 }
+
+.bg-black {
+    background-color: #999999 !important;
+}

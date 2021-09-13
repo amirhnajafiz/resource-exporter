@@ -5,7 +5,7 @@
     {{ $post->title }}<br />
     <small>
         <a href="{{ route('user.view', $post->user->id) }}" target="_blank">
-            {{ "Posted by:" . $post->user->name }}
+            {{ "Posted by: " . $post->user->name }}
         </a>
     </small>
     <div class="d-flex justify-content-between mt-4 px-3">

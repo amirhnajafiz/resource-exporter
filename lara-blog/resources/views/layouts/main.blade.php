@@ -16,7 +16,7 @@
             Blog - {{ $title }}
         </title>
     </head>
-    <body class="text-light" style="background-image: linear-gradient(to bottom right, #131d2b, #cfcfbe); background-repeat: no-repeat; background-size: contain; background-attachment: fixed">
+    <body class="text-light bg-black">
         <x-header></x-header>
         <div class="container-fluid p-0" style="margin-top: 100px; margin-bottom: 20px;">
             <div>

@@ -67,7 +67,7 @@
                         class="form-control ml-2"
                         name="keyword"
                         type="text"
-                        placeholder="Search ..."
+                        placeholder="Tag | Category | Tag ..."
                         aria-label="Search"
                     />
                     @if(\Illuminate\Support\Facades\Auth::check())

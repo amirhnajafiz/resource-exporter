@@ -8,7 +8,7 @@
         >
                 Search results<br />
             <small>
-                Top 5 results of {{ $keyword }}
+                {{ $total }} results of {{ implode(', ', $keywords) }}
             </small>
         </h3>
         <div class="text-dark text-center my-4">
@@ -20,7 +20,7 @@
         <div class="d-flex m-auto my-2 w-25 justify-content-center align-items-center rounded bg-dark text-light">
             <form action="{{ route('search', ($offset - 5)) }}" method="get">
                 @csrf
-                <input type="hidden" name="keyword" value="{{ $keyword }}" />
+                <input type="hidden" name="keyword" value="{{ implode('|', $keywords) }}" />
                 <input type="submit" class="btn text-light" value="Prev" />
             </form>
             <small class="badge badge-light">
@@ -28,7 +28,7 @@
             </small>
             <form action="{{ route('search', ($offset + 5)) }}" method="get">
                 @csrf
-                <input type="hidden" name="keyword" value="{{ $keyword }}" />
+                <input type="hidden" name="keyword" value="{{ implode('|', $keywords) }}" />
                 <input type="submit" class="btn text-light" value="Next" />
             </form>
         </div>

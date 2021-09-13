@@ -15,23 +15,33 @@ trait Search
     public function search(SearchRequest $request, $offset = 0)
     {
         $validated = $request->validated();
-        $keyword = $validated['keyword'];
+        $keywords = explode("|", $validated['keyword']);
 
-        $tag = Tag::query()->where('title', 'like', '%' . $keyword . '%')->first();
-        $category = Category::query()->where('title', 'like', '%' . $keyword . '%')->first();
-
-        $tags = $tag->posts;
-        $categories = $category->posts;
+        $tags = Tag::all();
+        $categories = Category::all();
 
         $result = $tags->concat($categories);
+
+        foreach ($keywords as $keyword) {
+
+            $tag = Tag::query()->where('title', '=', $keyword)->first();
+            $category = Category::query()->where('title', '=', $keyword)->first();
+
+            $tags = $tag ? $tag->posts : collect([]);
+            $categories = $category ? $category->posts : collect([]);
+
+            $result = $result->intersect($tags->concat($categories));
+        }
+
         $total = $result->count();
 
         $offset = $this->calculateOffset($offset, 5, $total);
 
         return view('components.public.search')
             ->with('title', 'search')
-            ->with('keyword', $keyword)
+            ->with('keywords', $keywords)
             ->with('offset', $offset)
+            ->with('total', $total)
             ->with('posts', $result->skip($offset)->take(5));
     }
 }

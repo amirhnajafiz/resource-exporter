@@ -104,6 +104,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('view/draft/{id}', [PostController::class, 'viewdraft'])
         ->name('view.draft');
 
+    Route::patch('draft/publish/{id}', [PostController::class, 'publish'])
+        ->name('publish');
+
     Route::post('comment', [UserController::class, 'comment'])
         ->name('comment');
 

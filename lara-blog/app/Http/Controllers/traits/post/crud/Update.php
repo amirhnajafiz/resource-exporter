@@ -5,12 +5,14 @@ namespace App\Http\Controllers\traits\post\crud;
 use App\Http\Controllers\traits\file\FileReplace;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 trait Update
 {
     use FileReplace;
 
-    public function update(UpdatePostRequest $request): \Illuminate\Http\RedirectResponse
+    public function update(UpdatePostRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -54,5 +56,17 @@ trait Update
         $post->save();
 
         return redirect()->route('dashboard');
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function publish($id): RedirectResponse
+    {
+        $post = Post::query()->findOrFail($id);
+        $post->published = 1;
+        $post->save();
+        return redirect()->route('view.draft', Auth::id());
     }
 }

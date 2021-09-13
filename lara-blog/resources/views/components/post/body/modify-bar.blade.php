@@ -16,4 +16,15 @@
             </button>
         </form>
     </div>
+    @if($post->published == 0)
+        <div>
+            <form action="{{ route('publish', $post->id) }}" method="post">
+                @csrf
+                @method('patch')
+                <button type="submit" class="btn btn-primary">
+                    Publish
+                </button>
+            </form>
+        </div>
+    @endif
 </div>

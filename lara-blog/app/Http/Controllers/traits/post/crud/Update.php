@@ -25,9 +25,17 @@ trait Update
             $oldName = $post->image ? $post->image->path : '';
             $name = $post->id . "_image." . $request->file('file')->extension();
             $this->replaceFile('posts/', $name, $request->file('file'), $oldName);
-            $post->image()->update([
-                'path' => 'posts/' . $name
-            ]);
+            if ($post->image) {
+                $post->image()->update([
+                    'path' => 'posts/' . $name
+                ]);
+            } else {
+                $post->image()->create([
+                    'title' => $validated['title'],
+                    'alt' => $post->slug,
+                    'path' => 'posts/' . $name
+                ]);
+            }
         }
 
         if ($request->has('allow_comments')) {

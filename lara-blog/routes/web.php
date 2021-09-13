@@ -98,8 +98,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('save/{id}', [UserController::class, 'save'])
         ->name('save');
 
-    Route::get('viewsave', [UserController::class, 'viewsave'])
+    Route::get('view/save', [UserController::class, 'viewsave'])
         ->name('view.save');
+
+    Route::get('view/draft/{id}', [PostController::class, 'viewdraft'])
+        ->name('view.draft');
 
     Route::post('comment', [UserController::class, 'comment'])
         ->name('comment');

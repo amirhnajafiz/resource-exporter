@@ -11,6 +11,7 @@ use App\Http\Controllers\traits\post\crud\Force;
 use App\Http\Controllers\traits\post\crud\Restore;
 use App\Http\Controllers\traits\post\crud\Search;
 use App\Http\Controllers\traits\post\crud\Update;
+use App\Http\Controllers\traits\post\view\DraftView;
 use App\Http\Controllers\traits\post\view\TrashView;
 use App\Http\Controllers\traits\post\view\UpdateView;
 use App\Models\Post;
@@ -26,14 +27,14 @@ class PostController extends Controller
 {
     // Traits
     use Create, Delete, Force, Restore, Update, Search, AllPosts, PostImageDownload;
-    use TrashView, UpdateView, CreateView;
+    use TrashView, UpdateView, CreateView, DraftView;
 
     /**
      * @return Application|Factory|View
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::all()->where('published', '=', 1);
         return view('components.public.index')
             ->with('posts', $posts->random(min([5, $posts->count()])))
             ->with('title', 'public');

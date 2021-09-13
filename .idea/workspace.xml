@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/view/TrashView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/view/DraftView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/drafts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/database/migrations/2021_09_01_161821_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/database/migrations/2021_09_01_161821_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/AllPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/AllPosts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +210,7 @@
       <workItem from="1631512143180" duration="55000" />
       <workItem from="1631521763498" duration="6104000" />
       <workItem from="1631529760654" duration="2812000" />
-      <workItem from="1631541286424" duration="318000" />
+      <workItem from="1631541286424" duration="903000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

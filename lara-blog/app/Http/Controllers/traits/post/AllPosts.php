@@ -11,9 +11,9 @@ trait AllPosts
 
     public function allPosts($offset = 0)
     {
-        $offset = $this->calculateOffset($offset, 25, Post::all()->count());
+        $offset = $this->calculateOffset($offset, 25, Post::all()->where('published', '=', 1)->count());
         return view('components.admin.posts')
-            ->with('posts', Post::query()->skip($offset)->take(25)->get())
+            ->with('posts', Post::query()->where('published', '=', 1)->skip($offset)->take(25)->get())
             ->with('offset', $offset)
             ->with('title', 'posts');
     }

@@ -1,5 +1,5 @@
 <div {{ $attributes }}>
-    <div class="w-50 m-auto text-dark bg-light rounded">
+    <div class="w-100 m-auto text-dark bg-light rounded">
         @if($type == "view")
             <x-post.header.view-header :post="$post"></x-post.header.view-header>
         @else

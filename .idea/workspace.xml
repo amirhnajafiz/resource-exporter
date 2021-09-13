@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/index-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/header/index-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/postview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/postview.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/public/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +208,7 @@
       <workItem from="1631445707305" duration="6172000" />
       <workItem from="1631460629857" duration="2809000" />
       <workItem from="1631512143180" duration="55000" />
-      <workItem from="1631521763498" duration="5018000" />
+      <workItem from="1631521763498" duration="5653000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

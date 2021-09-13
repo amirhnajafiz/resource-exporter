@@ -24,7 +24,8 @@
             <x-post.post-card
                 :post="$post"
                 type="index"
-                style="margin-bottom: 20px;"
+                class="border-1 rounded shadow w-50 m-auto"
+                style="margin-top: 50px !important;"
             ></x-post.post-card>
         @endforeach
     @else

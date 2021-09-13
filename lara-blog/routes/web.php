@@ -109,6 +109,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('user/view/{id}', [AdminController::class, 'viewUser'])
         ->name('user.view');
+
+    Route::get('download/{id}', [PostController::class, 'downloadPostImage'])
+        ->name('download');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {

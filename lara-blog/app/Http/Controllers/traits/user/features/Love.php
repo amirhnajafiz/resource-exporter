@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers\traits\user\features;
 
+use App\Models\Post;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait Love
+ * @package App\Http\Controllers\traits\user\features
+ */
 trait Love
 {
-    public function love($id): \Illuminate\Http\JsonResponse
+    /**
+     * @param $id
+     * @return JsonResponse
+     */
+    public function love($id): JsonResponse
     {
         $result = \App\Models\Love::query()
             ->where('user_id', '=', Auth::id())
@@ -23,7 +33,7 @@ trait Love
         }
 
         return response()->json([
-            'total'=> \App\Models\Post::query()->find($id)->loves->count()
+            'total'=> Post::query()->find($id)->loves->count()
         ]);
     }
 }

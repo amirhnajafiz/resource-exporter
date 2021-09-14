@@ -5,32 +5,27 @@ namespace App\Http\Controllers\traits\post\view;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
+/**
+ * Trait UpdateView
+ * @package App\Http\Controllers\traits\post\view
+ */
 trait UpdateView
 {
+    /**
+     * @param $id
+     * @return Application|Factory|View|RedirectResponse
+     */
     public function updateview($id)
     {
-        $rules = [
-            'id' => 'exists:App\Models\Post,id'
-        ];
-
-        $messages = [
-            'exists' => 'No post found.'
-        ];
-
-        $validator = Validator::make(['id' => $id], $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
-        });
-
-        $validated = $validator->validate();
-
-        $post = Post::query()->find($validated['id']);
+        $post = Post::query()->findOrFail($id);
         $tags = Tag::all();
         $categories = Category::all();
 

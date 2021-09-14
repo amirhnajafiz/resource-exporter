@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\post\AllPosts;
 use App\Http\Controllers\traits\post\crud\Create;
+use App\Http\Controllers\traits\post\crud\Publish;
 use App\Http\Controllers\traits\post\PostImageDownload;
 use App\Http\Controllers\traits\post\view\CreateView;
 use App\Http\Controllers\traits\post\crud\Delete;
@@ -26,7 +27,7 @@ use Illuminate\Contracts\View\View;
 class PostController extends Controller
 {
     // Traits
-    use Create, Delete, Force, Restore, Update, Search, AllPosts, PostImageDownload;
+    use Create, Delete, Force, Restore, Update, Search, Publish, AllPosts, PostImageDownload;
     use TrashView, UpdateView, CreateView, DraftView;
 
     /**

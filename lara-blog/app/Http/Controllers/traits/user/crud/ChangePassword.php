@@ -4,12 +4,21 @@ namespace App\Http\Controllers\traits\user\crud;
 
 use App\Http\Requests\UserChangePasswordRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * Trait ChangePassword
+ * @package App\Http\Controllers\traits\user\crud
+ */
 trait ChangePassword
 {
-    public function changePassword(UserChangePasswordRequest $request): \Illuminate\Http\RedirectResponse
+    /**
+     * @param UserChangePasswordRequest $request
+     * @return RedirectResponse
+     */
+    public function changePassword(UserChangePasswordRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 

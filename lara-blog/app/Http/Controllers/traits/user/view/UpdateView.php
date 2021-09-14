@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers\traits\user\view;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait UpdateView
+ * @package App\Http\Controllers\traits\user\view
+ */
 trait UpdateView
 {
+    /**
+     * @param $id
+     * @return Application|Factory|View|RedirectResponse
+     */
     public function updateview($id)
     {
         if ($id != Auth::id()) {

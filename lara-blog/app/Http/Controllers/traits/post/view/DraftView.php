@@ -3,10 +3,22 @@
 namespace App\Http\Controllers\traits\post\view;
 
 use App\Models\Post;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait DraftView
+ * @package App\Http\Controllers\traits\post\view
+ */
 trait DraftView
 {
+    /**
+     * @param $id
+     * @return Application|Factory|View|RedirectResponse
+     */
     public function viewdraft($id)
     {
         if ($id != Auth::id()) {

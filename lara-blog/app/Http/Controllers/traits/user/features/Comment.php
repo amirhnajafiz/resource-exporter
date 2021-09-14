@@ -3,11 +3,20 @@
 namespace App\Http\Controllers\traits\user\features;
 
 use App\Http\Requests\CreateCommentRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait Comment
+ * @package App\Http\Controllers\traits\user\features
+ */
 trait Comment
 {
-    public function comment(CreateCommentRequest $request): \Illuminate\Http\RedirectResponse
+    /**
+     * @param CreateCommentRequest $request
+     * @return RedirectResponse
+     */
+    public function comment(CreateCommentRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 

@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers\traits\user\features;
 
+use App\Models\Post;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait Like
+ * @package App\Http\Controllers\traits\user\features
+ */
 trait Like
 {
-    public function like($id): \Illuminate\Http\JsonResponse
+    /**
+     * @param $id
+     * @return JsonResponse
+     */
+    public function like($id): JsonResponse
     {
         $result = \App\Models\Like::query()
             ->where('user_id', '=', Auth::id())
@@ -23,7 +33,7 @@ trait Like
         }
 
         return response()->json([
-            'total'=> \App\Models\Post::query()->find($id)->likes->count()
+            'total'=> Post::query()->find($id)->likes->count()
         ]);
     }
 }

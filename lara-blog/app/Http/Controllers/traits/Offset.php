@@ -2,8 +2,18 @@
 
 namespace App\Http\Controllers\traits;
 
+/**
+ * Trait Offset
+ * @package App\Http\Controllers\traits
+ */
 trait Offset
 {
+    /**
+     * @param $offset
+     * @param $limit
+     * @param $total
+     * @return float|int|mixed
+     */
     public function calculateOffset($offset, $limit, $total)
     {
         if ($offset >= $total)

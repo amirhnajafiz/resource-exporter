@@ -9,6 +9,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait TrashView
+ * @package App\Http\Controllers\traits\post\view
+ */
 trait TrashView
 {
     /**

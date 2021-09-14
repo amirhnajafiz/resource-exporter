@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers\traits\user\view;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait PasswordView
+ * @package App\Http\Controllers\traits\user\view
+ */
 trait PasswordView
 {
+    /**
+     * @param $id
+     * @return Application|Factory|View|RedirectResponse
+     */
     public function passwordview($id)
     {
         if ($id != Auth::id()) {

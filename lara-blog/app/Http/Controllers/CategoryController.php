@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\traits\file\FileCreate;
 use App\Http\Controllers\traits\file\FileDestroy;
 use App\Http\Controllers\traits\file\FileReplace;
+use App\Http\Requests\CreateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -48,12 +49,12 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param CreateCategoryRequest $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(CreateCategoryRequest $request): RedirectResponse
     {
-        $category = Category::query()->create($request->all());
+        $category = Category::query()->create($request->validated());
 
         if ($request->file('file')) {
             $name = $category->id . "_image." . $request->file('file')->extension();
@@ -100,14 +101,14 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param  int  $id
+     * @param CreateCategoryRequest $request
+     * @param int $id
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(CreateCategoryRequest $request, $id): RedirectResponse
     {
         $category = Category::query()->findOrFail($id);
-        $category->update($request->all());
+        $category->update($request->validated());
         if ($request->file('file')) {  // Saving category image
             $oldName = $category->image ? $category->image->path : '';
             $name = $category->id . "_image." . $request->file('file')->extension();

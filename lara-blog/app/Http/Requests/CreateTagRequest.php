@@ -7,10 +7,10 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * Class CreateCategoryRequest
+ * Class CreateTagRequest
  * @package App\Http\Requests
  */
-class CreateCategoryRequest extends FormRequest
+class CreateTagRequest extends FormRequest
 {
     // Traits
     use AfterFailValidate;
@@ -43,9 +43,9 @@ class CreateCategoryRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'required' => 'You must have a title.',
-            'min' => 'Title is too short.',
-            'max' => 'Title is too long.',
+            'required' => 'You must have a tag title.',
+            'min' => 'Tag is too short.',
+            'max' => 'Tag is too long.',
         ];
     }
 }

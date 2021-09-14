@@ -7,8 +7,13 @@ use App\Models\Post;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class UpdatePostRequest
+ * @package App\Http\Requests
+ */
 class UpdatePostRequest extends FormRequest
 {
+    // Traits
     use AfterFailValidate;
 
     /**
@@ -41,6 +46,9 @@ class UpdatePostRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string[]
+     */
     public function messages(): array
     {
         return [

@@ -6,8 +6,13 @@ use App\Http\Requests\traits\AfterFailValidate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class CreatePostRequest
+ * @package App\Http\Requests
+ */
 class CreatePostRequest extends FormRequest
 {
+    // Traits
     use AfterFailValidate;
 
     /**
@@ -38,6 +43,9 @@ class CreatePostRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string[]
+     */
     public function messages(): array
     {
         return [

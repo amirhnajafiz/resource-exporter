@@ -4,9 +4,15 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\traits\AfterFailValidate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class SearchRequest
+ * @package App\Http\Requests
+ */
 class SearchRequest extends FormRequest
 {
+    // Traits
     use AfterFailValidate;
 
     /**
@@ -16,7 +22,7 @@ class SearchRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Auth::check();
     }
 
     /**

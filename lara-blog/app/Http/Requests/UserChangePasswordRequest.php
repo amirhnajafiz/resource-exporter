@@ -6,8 +6,13 @@ use App\Http\Requests\traits\AfterFailValidate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class UserChangePasswordRequest
+ * @package App\Http\Requests
+ */
 class UserChangePasswordRequest extends FormRequest
 {
+    // Traits
     use AfterFailValidate;
 
     /**
@@ -33,6 +38,9 @@ class UserChangePasswordRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string[]
+     */
     public function messages(): array
     {
         return [

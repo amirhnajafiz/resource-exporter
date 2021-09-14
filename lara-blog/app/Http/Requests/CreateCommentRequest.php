@@ -5,8 +5,13 @@ namespace App\Http\Requests;
 use App\Http\Requests\traits\AfterFailValidate;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class CreateCommentRequest
+ * @package App\Http\Requests
+ */
 class CreateCommentRequest extends FormRequest
 {
+    // Traits
     use AfterFailValidate;
 
     /**
@@ -32,6 +37,9 @@ class CreateCommentRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string[]
+     */
     public function messages(): array
     {
         return [

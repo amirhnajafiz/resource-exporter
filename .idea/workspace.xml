@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileCreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileDestroy.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileDestroy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileReplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/file/FileReplace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Force.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Force.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Restore.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Restore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +214,7 @@
       <workItem from="1631521763498" duration="6104000" />
       <workItem from="1631529760654" duration="2812000" />
       <workItem from="1631541286424" duration="5317000" />
-      <workItem from="1631595278265" duration="328000" />
+      <workItem from="1631595278265" duration="1136000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

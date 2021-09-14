@@ -8,10 +8,19 @@ use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Trait Update
+ * @package App\Http\Controllers\traits\post\crud
+ */
 trait Update
 {
+    // Traits
     use FileReplace;
 
+    /**
+     * @param UpdatePostRequest $request
+     * @return RedirectResponse
+     */
     public function update(UpdatePostRequest $request): RedirectResponse
     {
         $validated = $request->validated();
@@ -56,17 +65,5 @@ trait Update
         $post->save();
 
         return redirect()->route('dashboard');
-    }
-
-    /**
-     * @param $id
-     * @return RedirectResponse
-     */
-    public function publish($id): RedirectResponse
-    {
-        $post = Post::query()->findOrFail($id);
-        $post->published = 1;
-        $post->save();
-        return redirect()->route('view.draft', Auth::id());
     }
 }

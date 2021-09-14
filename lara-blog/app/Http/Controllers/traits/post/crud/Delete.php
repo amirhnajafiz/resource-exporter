@@ -3,32 +3,24 @@
 namespace App\Http\Controllers\traits\post\crud;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
+/**
+ * Trait Delete
+ * @package App\Http\Controllers\traits\post\crud
+ */
 trait Delete
 {
-    public function delete($id): \Illuminate\Http\RedirectResponse
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function delete($id): RedirectResponse
     {
-        $rules = [
-            'id' => 'exists:App\Models\Post,id'
-        ];
-
-        $messages = [
-            'exists' => 'No post found.'
-        ];
-
-        $validator = Validator::make(['id' => $id], $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
-        });
-
-        $validated = $validator->validate();
-
-        $post = Post::query()->find($validated['id']);
+        $post = Post::query()->findOrFail($id);
 
         if ($post->user->id == Auth::id())
         {
@@ -36,7 +28,7 @@ trait Delete
             return redirect()->route('dashboard');
         } else {
             if (Auth::user()->is_admin == 1) {
-                $post->forceDelete();
+                $post->forceDelete();  // Admin force delete
                 return redirect()->route('admin.posts');
             } else {
                 return redirect()

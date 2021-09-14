@@ -3,32 +3,24 @@
 namespace App\Http\Controllers\traits\post\crud;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
+/**
+ * Trait Restore
+ * @package App\Http\Controllers\traits\post\crud
+ */
 trait Restore
 {
-    public function restore($id): \Illuminate\Http\RedirectResponse
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function restore($id): RedirectResponse
     {
-        $rules = [
-            'id' => 'exists:App\Models\Post,id'
-        ];
-
-        $messages = [
-            'exists' => 'No post found.'
-        ];
-
-        $validator = Validator::make(['id' => $id], $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
-        });
-
-        $validated = $validator->validate();
-
-        $post = Post::onlyTrashed()->find($validated['id']);
+        $post = Post::onlyTrashed()->findOrFail($id);
 
         if ($post->user->id == Auth::id())
         {

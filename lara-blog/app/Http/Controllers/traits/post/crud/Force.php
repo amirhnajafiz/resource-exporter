@@ -4,40 +4,31 @@ namespace App\Http\Controllers\traits\post\crud;
 
 use App\Http\Controllers\traits\file\FileDestroy;
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * Trait Force
+ * @package App\Http\Controllers\traits\post\crud
+ */
 trait Force
 {
     use FileDestroy;
 
-    public function force($id): \Illuminate\Http\RedirectResponse
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function force($id): RedirectResponse
     {
-        $rules = [
-            'id' => 'exists:App\Models\Post,id'
-        ];
-
-        $messages = [
-            'exists' => 'No post found.'
-        ];
-
-        $validator = Validator::make(['id' => $id], $rules, $messages);
-
-        $validator->after(function ($validator) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
-        });
-
-        $validated = $validator->validate();
-
-        $post = Post::onlyTrashed()->find($validated['id']);
+        $post = Post::onlyTrashed()->findOrFail($id);
 
         if ($post->user->id == Auth::id())
         {
             $image = $post->image->path;
-            $this->destroyFile($image);
-            $post->forceDelete();
+            $this->destroyFile($image);  // Storage delete
+            $post->forceDelete();  // Database delete
             return redirect()->route('trash', Auth::id());
         } else {
             return redirect()

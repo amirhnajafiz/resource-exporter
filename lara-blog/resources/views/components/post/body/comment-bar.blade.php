@@ -12,7 +12,7 @@
                 name="comment"
                 placeholder="Write something ..."
             ></textarea>
-            <input type="submit" value="Send" class="btn btn-success mt-2" />
+            <input type="submit" value="Send" class="btn btn-success mt-2"/>
         </form>
     </div>
     <div class="my-3">
@@ -20,10 +20,11 @@
             @foreach($post->comments as $comment)
                 <div class="border rounded my-1 p-2">
                     <div class="h6 d-flex align-center flex-wrap">
-                        <span class="d-inline-block rounded-circle bg-success" style="width: 20px; height: 20px;"></span>
+                        <span class="d-inline-block rounded-circle bg-success"
+                              style="width: 20px; height: 20px;"></span>
                         <span class="ml-1">
-                                    {{ $comment->user->name }}
-                                </span>
+                            {{ $comment->user->name }}
+                        </span>
                     </div>
                     <div>
                         {{ $comment->content }}

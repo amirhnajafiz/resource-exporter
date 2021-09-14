@@ -5,9 +5,6 @@
         @else
             <x-post.header.index-header :post="$post"></x-post.header.index-header>
         @endif
-        @if($errors->any())
-            <x-error-box></x-error-box>
-        @endif
         <div class="p-5 mt-1">
             @if($post->image)
                 <x-post.body.image-box :post="$post"></x-post.body.image-box>

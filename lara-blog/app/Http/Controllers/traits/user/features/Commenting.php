@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\traits\user\features;
 
 use App\Http\Requests\CreateCommentRequest;
+use App\Models\Comment;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
  * Trait Comment
  * @package App\Http\Controllers\traits\user\features
  */
-trait Comment
+trait Commenting
 {
     /**
      * @param CreateCommentRequest $request
@@ -20,7 +21,7 @@ trait Comment
     {
         $validated = $request->validated();
 
-        \App\Models\Comment::query()->create([
+        Comment::query()->create([
             'user_id' => Auth::id(),
             'post_id' => $validated['post_id'],
             'content' => $validated['comment'],

@@ -32,8 +32,8 @@ class CreateCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'post_id' => 'required|exists:App\Model\Post,id',
-            'content' => 'required|min:3|max:64'
+            'post_id' => 'required|exists:posts,id',
+            'comment' => 'required|min:3|max:64'
         ];
     }
 

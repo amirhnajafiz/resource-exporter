@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\traits\user\crud\ChangePassword;
-use App\Http\Controllers\traits\user\features\Comment;
+use App\Http\Controllers\traits\user\features\Commenting;
 use App\Http\Controllers\traits\user\features\Like;
 use App\Http\Controllers\traits\user\Login;
 use App\Http\Controllers\traits\user\Logout;
@@ -28,7 +28,7 @@ class UserController extends Controller
 {
     // Traits
     use Register, Login, Logout, Update, ChangePassword;
-    use Love, Like, Save, Comment;
+    use Love, Like, Save, Commenting;
     use UpdateView, PasswordView, SaveView;
 
     /**

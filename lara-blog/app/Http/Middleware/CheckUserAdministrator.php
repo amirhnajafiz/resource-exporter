@@ -21,9 +21,6 @@ class CheckUserAdministrator
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->is_admin == 1)
-            return $next($request);
-        else
-            return back(304);
+        return $next($request);
     }
 }

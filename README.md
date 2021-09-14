@@ -1,10 +1,10 @@
 # Lara Blog
 
 <p align="center">
-    <img src="./demo/main.png" width="350" />
-    <img src="./demo/search.png" width="350" />
-    <img src="./demo/edit.png" width="350" />
-    <img src="./demo/profile.png" width="350" />
+    <img src="./demo/main.png" width="600" />
+    <img src="./demo/search.png" width="600" />
+    <img src="./demo/edit.png" width="600" />
+    <img src="./demo/profile.png" width="600" />
 </p>
 
 ### Welcome

@@ -14,6 +14,7 @@ trait SlugMake
      */
     public function slugMake($value): string
     {
+        // Str::slug
         return strtolower(str_replace(' ', '-', $value));
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class AdminController
@@ -16,10 +17,13 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     /**
-     * @return Application|Factory|View
+     * @return Application|Factory|View|RedirectResponse
      */
     public function index()
     {
+        if (Auth::user()->is_admin == 0) {
+            return redirect('index', 302);
+        }
         return view('components.admin.dashboard')
             ->with('title', 'admin - panel');
     }

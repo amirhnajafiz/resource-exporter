@@ -41,6 +41,7 @@ trait Create
         // Publication status
         if ($request->has('draft')) {
             $post->published = 0;
+            $post->save();
         }
 
         // Comments allow

@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/post/crud/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lara-blog/app/Models/traits/SlugMake.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Models/traits/SlugMake.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +211,9 @@
       <workItem from="1631521763498" duration="6104000" />
       <workItem from="1631529760654" duration="2812000" />
       <workItem from="1631541286424" duration="5317000" />
-      <workItem from="1631595278265" duration="7648000" />
+      <workItem from="1631595278265" duration="8520000" />
+      <workItem from="1631606817852" duration="894000" />
+      <workItem from="1631627797823" duration="3807000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

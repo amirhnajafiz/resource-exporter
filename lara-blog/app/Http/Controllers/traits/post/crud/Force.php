@@ -26,7 +26,7 @@ trait Force
 
         if ($post->user->id == Auth::id())
         {
-            $image = $post->image->path;
+            $image = $post->image ? $post->image->path : '';
             $this->destroyFile($image);  // Storage delete
             $post->forceDelete();  // Database delete
             return redirect()->route('trash', Auth::id());

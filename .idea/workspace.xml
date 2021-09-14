@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/features/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Controllers/traits/user/features/Commenting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Middleware/CheckUserAdministrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Middleware/CheckUserAdministrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/app/Http/Requests/CreateCommentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/app/Http/Requests/CreateCommentRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/comment-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/body/comment-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/lara-blog/resources/views/components/post/post-card.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="cb3e4c53-c27d-48bf-b282-a7b99ab5970e" name="Default Changelist" comment="Post component refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +204,7 @@
       <workItem from="1631521763498" duration="6104000" />
       <workItem from="1631529760654" duration="2812000" />
       <workItem from="1631541286424" duration="5317000" />
-      <workItem from="1631595278265" duration="5470000" />
+      <workItem from="1631595278265" duration="5889000" />
     </task>
     <task id="LOCAL-00001" summary="Post component refactor">
       <created>1631166352450</created>

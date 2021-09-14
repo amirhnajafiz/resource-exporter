@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 32);
+            $table->string('title', 32)->nullable(false);
             $table->string('alt', 32);
             $table->string('path', 1024);
             $table->foreignId('imageable_id')->references('id')->on('images')->cascadeOnDelete();

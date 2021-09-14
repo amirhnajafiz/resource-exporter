@@ -8,6 +8,9 @@
         >
             User profile
         </h3>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="w-100 d-flex justify-content-center">
             <div class="w-100 m-0">
                 <div class="card user-card-full" style="margin-bottom: 0 !important;">

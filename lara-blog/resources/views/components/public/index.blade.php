@@ -14,11 +14,9 @@
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
     </div>
-    <div
-        class="h1 text-center w-50 text-light m-auto d-flex justify-content-start"
-        style="margin-bottom: 40px !important;"
-    >
-    </div>
+    @if($errors->any())
+        <x-error-box></x-error-box>
+    @endif
     @if(count($posts) > 0)
         @foreach($posts as $post)
             <x-post.post-card

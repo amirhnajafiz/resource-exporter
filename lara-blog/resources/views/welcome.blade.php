@@ -4,6 +4,9 @@
     <div class="position-relative overflow-hidden p-0 bg-light text-dark"
          style="height: 800px; background-image: url('{{ asset('images/main.svg') }}'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed"
     >
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="w-75 text-left border shadow mx-auto my-5 p-5 rounded bg-light" style="margin-top: 250px !important;">
             <div class="row pt-2">
                 <p class="lead d-inline-block col-12">

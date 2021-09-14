@@ -2,6 +2,9 @@
 
 @section('context')
     <div>
+        @if($errors->any())
+            <x-error-box></x-error-box>
+        @endif
         <div class="card mb-3">
             <img
                 src="{{ str_starts_with($category->image->path, 'http') ? $category->image->path : asset('storage/' . $category->image->path) }}"

@@ -2,7 +2,7 @@
     <img
         src="{{ str_starts_with($post->image->path, 'http') ? $post->image->path : asset('storage/' . $post->image->path) }}"
         alt="{{ $post->image->alt }}"
-        class="rounded d-block m-auto mb-1" width="400"/> <br />
+        class="rounded d-block m-auto mb-1 w-50" /> <br />
     <a href="{{ route('download', $post->id) }}" type="button" class="badge badge-primary">
         Download
     </a>

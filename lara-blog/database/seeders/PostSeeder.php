@@ -7,6 +7,10 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class PostSeeder
+ * @package Database\Seeders
+ */
 class PostSeeder extends Seeder
 {
     /**

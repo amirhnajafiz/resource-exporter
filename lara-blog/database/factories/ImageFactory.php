@@ -5,6 +5,10 @@ namespace Database\Factories;
 use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Class ImageFactory
+ * @package Database\Factories
+ */
 class ImageFactory extends Factory
 {
     /**

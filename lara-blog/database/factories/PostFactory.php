@@ -5,6 +5,10 @@ namespace Database\Factories;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Class PostFactory
+ * @package Database\Factories
+ */
 class PostFactory extends Factory
 {
     /**

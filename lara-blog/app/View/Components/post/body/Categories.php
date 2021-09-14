@@ -2,10 +2,19 @@
 
 namespace App\View\Components\post\body;
 
+use Closure;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class Categories
+ * @package App\View\Components\post\body
+ */
 class Categories extends Component
 {
+    /**
+     * @var $post
+     */
     public $post;
 
     /**
@@ -21,7 +30,7 @@ class Categories extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View|Closure|string
      */
     public function render()
     {

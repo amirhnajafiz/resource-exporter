@@ -6,8 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class ContentBox
+ * @package App\View\Components\post\body
+ */
 class ContentBox extends Component
 {
+    /**
+     * @var $post
+     */
     public $post;
 
     /**

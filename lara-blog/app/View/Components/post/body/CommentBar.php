@@ -6,8 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class CommentBar
+ * @package App\View\Components\post\body
+ */
 class CommentBar extends Component
 {
+    /**
+     * @var $post
+     */
     public $post;
 
     /**

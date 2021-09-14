@@ -6,6 +6,10 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class Header
+ * @package App\View\Components
+ */
 class Header extends Component
 {
     /**

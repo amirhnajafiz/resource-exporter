@@ -6,8 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class FeaturesBar
+ * @package App\View\Components\post\body
+ */
 class FeaturesBar extends Component
 {
+    /**
+     * @var $post
+     * @var $type
+     */
     public $post;
     public $type;
 

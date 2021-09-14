@@ -6,8 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class PostCard
+ * @package App\View\Components\post
+ */
 class PostCard extends Component
 {
+    /**
+     * @var $post
+     * @var $type
+     */
     public $post;
     public $type;
 

@@ -6,8 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * Class ViewHeader
+ * @package App\View\Components\post\header
+ */
 class ViewHeader extends Component
 {
+    /**
+     * @var $post
+     */
     public $post;
 
     /**

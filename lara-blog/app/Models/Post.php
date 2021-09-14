@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class Post
+ * @package App\Models
+ */
 class Post extends Model
 {
+    // Traits
     use HasFactory, SlugMake;
     use SoftDeletes, PostRelations;
 
+    // Fillable
     protected $fillable = [
         'title',
         'content',
@@ -23,6 +29,9 @@ class Post extends Model
         'user_id'
     ];
 
+    /**
+     * @param $value
+     */
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;

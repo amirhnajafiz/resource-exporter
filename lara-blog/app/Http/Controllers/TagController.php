@@ -74,7 +74,7 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        $tag = Tag::query()->find($id);
+        $tag = Tag::query()->findOrFail($id);
         return view('components.admin.content.edit_tag')
             ->with('tag', $tag)
             ->with('title', 'tag - edit');
@@ -101,7 +101,7 @@ class TagController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        Tag::query()->find($id)->delete();
+        Tag::query()->findOrFail($id)->delete();
         return redirect()->route('tags.index');
     }
 }

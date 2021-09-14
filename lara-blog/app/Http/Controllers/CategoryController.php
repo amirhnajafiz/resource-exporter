@@ -91,7 +91,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::query()->find($id);
+        $category = Category::query()->findOrFail($id);
         return view('components.admin.content.edit_category')
             ->with('category', $category)
             ->with('title', 'edit - category');
@@ -106,13 +106,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        $category = Category::query()->find($id);
+        $category = Category::query()->findOrFail($id);
         $category->update($request->all());
-        if ($request->file('file')) {
+        if ($request->file('file')) {  // Saving category image
             $oldName = $category->image ? $category->image->path : '';
             $name = $category->id . "_image." . $request->file('file')->extension();
             $this->replaceFile('categories/', $name, $request->file('file'), $oldName);
-            $category->image()->update([
+            $category->image()->update([ // Database storing
                 'path' => 'categories/' . $name
             ]);
         }
@@ -127,9 +127,10 @@ class CategoryController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        $image = Category::query()->find($id)->image->path;
-        $this->destroyFile($image);
-        Category::query()->find($id)->delete();
+        $image = Category::query()->findOrFail($id)->image->path;
+        $this->destroyFile($image); // Storage image delete
+        $image->delete(); // Database delete
+        Category::query()->find($id)->delete(); // Category delete
         return redirect()->route('categories.index');
     }
 }

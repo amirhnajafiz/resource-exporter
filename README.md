@@ -7,3 +7,9 @@
 A kubernetes controller for monitoring kubernetes cluster resources and send notifications/alerts
 on events. This system gets a set of rules as an input, after that it surveillance your cluster
 and it sends notifications via email if any violations occurred.
+
+## schema
+
+```
+Kubernetes cluster -> Pods -> Resources -> Check rules -> [Over limit] -> send email
+```

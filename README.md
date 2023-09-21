@@ -10,6 +10,8 @@ and it sends notifications via email if any violations occurred.
 
 ## schema
 
+Here is the state machine of our system.
+
 ```
-Kubernetes cluster -> Pods -> Resources -> Check rules -> [Over limit] -> send email
+Kubernetes cluster -> Pods -> Resources -> Check rules -> Rules violation -> Send email
 ```

@@ -19,7 +19,6 @@ package controllers
 import (
 	"context"
 	"fmt"
-
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -67,8 +66,14 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 	// todo: get configs
 
 	// todo: check for violations
+	for _, container := range pod.Spec.Containers {
+		cpu := container.Resources.Limits.Cpu()
+		ram := container.Resources.Limits.Memory()
 
-	// todo: send email if resource usage is being violated
+		if cpu.Value() > 10 || ram.Value() > 10 {
+			// todo: send email if resource usage is being violated
+		}
+	}
 
 	return ctrl.Result{}, nil
 }

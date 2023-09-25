@@ -19,10 +19,12 @@ package controllers
 import (
 	"context"
 	"fmt"
+	"math"
+
 	"github.com/amirhnajafiz/pods-watcher/internal/config"
+
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"math"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
@@ -52,8 +54,7 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 
 	logger.Info(fmt.Sprintf("new pod request:\n\t%s", req.String()))
 
-	// get pod
-
+	// get requested pod
 	var pod corev1.Pod
 	if err := r.Get(ctx, req.NamespacedName, &pod); err != nil {
 		logger.Error(err, fmt.Sprintf("failed to get pod instance:\n\t%s", req.NamespacedName))
@@ -85,17 +86,20 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 		// check labels match
 		for key := range rule.Labels {
 			if value, ok := pod.Labels[key]; ok && value == rule.Labels[key] {
-				// set to maximum
+				// set to maximum of previous value and new value
 				cpuLimit = math.Max(rule.CPU, cpuLimit)
 				ramLimit = math.Max(rule.RAM, ramLimit)
 			}
 		}
 	}
 
+	// check requested resources
 	for _, container := range pod.Spec.Containers {
+		// get current resources
 		cpu := float64(container.Resources.Limits.Cpu().Value())
 		ram := float64(container.Resources.Limits.Memory().Value())
 
+		// check with rules
 		if cpu > cpuLimit || ram > ramLimit {
 			// todo: send email if resource usage is being violated
 		}

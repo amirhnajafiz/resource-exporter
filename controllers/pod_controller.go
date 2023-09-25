@@ -50,7 +50,20 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 
 	logger.Info(fmt.Sprintf("new pod request:\n\t%s", req.String()))
 
-	// todo: check if pod is being creating
+	// get pod
+
+	var pod corev1.Pod
+	if err := r.Get(ctx, req.NamespacedName, &pod); err != nil {
+		logger.Error(err, fmt.Sprintf("failed to get pod instance:\n\t%s", req.NamespacedName))
+
+		return ctrl.Result{}, err
+	}
+
+	// if pod is not running then ignore it
+	if pod.Status.Phase != corev1.PodRunning {
+		return ctrl.Result{}, nil
+	}
+
 	// todo: get pod labels
 	// todo: get configs
 	// todo: check for violations

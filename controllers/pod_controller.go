@@ -19,6 +19,7 @@ package controllers
 import (
 	"context"
 	"fmt"
+	"github.com/amirhnajafiz/pods-watcher/internal/config"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -30,6 +31,7 @@ import (
 type PodReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
+	Config config.Config
 }
 
 //+kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;watch;create;update;patch;delete
@@ -59,11 +61,9 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 	}
 
 	// if pod is not running then ignore it
-	if pod.Status.Phase != corev1.PodRunning {
+	if pod.Status.Phase == corev1.PodFailed {
 		return ctrl.Result{}, nil
 	}
-
-	// todo: get configs
 
 	// todo: check for violations
 	for _, container := range pod.Spec.Containers {

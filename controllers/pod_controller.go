@@ -22,6 +22,7 @@ import (
 	"github.com/amirhnajafiz/pods-watcher/internal/config"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"math"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
@@ -65,7 +66,32 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 		return ctrl.Result{}, nil
 	}
 
-	// todo: check for violations
+	// set defaults
+	var (
+		cpuLimit float64
+		ramLimit float64
+	)
+
+	// check in rules
+	for _, rule := range r.Config.Rules {
+		// if no labels are set, then it's global
+		if len(rule.Labels) == 0 {
+			cpuLimit = rule.CPU
+			ramLimit = rule.RAM
+
+			continue
+		}
+
+		// check labels match
+		for key := range rule.Labels {
+			if value, ok := pod.Labels[key]; ok && value == rule.Labels[key] {
+				// set to maximum
+				cpuLimit = math.Max(rule.CPU, cpuLimit)
+				ramLimit = math.Max(rule.RAM, ramLimit)
+			}
+		}
+	}
+
 	for _, container := range pod.Spec.Containers {
 		cpu := container.Resources.Limits.Cpu()
 		ram := container.Resources.Limits.Memory()

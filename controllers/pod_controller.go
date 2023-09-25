@@ -22,6 +22,7 @@ import (
 	"math"
 
 	"github.com/amirhnajafiz/pods-watcher/internal/config"
+	"github.com/amirhnajafiz/pods-watcher/internal/mail"
 
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -33,8 +34,9 @@ import (
 // PodReconciler reconciles a Pod object
 type PodReconciler struct {
 	client.Client
-	Scheme *runtime.Scheme
-	Config config.Config
+	Scheme    *runtime.Scheme
+	Config    config.Config
+	MailAgent mail.Agent
 }
 
 //+kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;watch;create;update;patch;delete
@@ -101,7 +103,18 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 
 		// check with rules
 		if cpu > cpuLimit || ram > ramLimit {
-			// todo: send email if resource usage is being violated
+			// send email in case of violation
+			if er := r.MailAgent.Send(
+				req.NamespacedName.String(),
+				req.Namespace,
+				"",
+				cpuLimit,
+				ramLimit,
+				cpu,
+				ram,
+			); er != nil {
+				logger.Error(er, fmt.Sprintf("failed to send violation email:\n\t%s", req.String()))
+			}
 		}
 	}
 

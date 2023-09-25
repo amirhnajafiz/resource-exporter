@@ -93,10 +93,10 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 	}
 
 	for _, container := range pod.Spec.Containers {
-		cpu := container.Resources.Limits.Cpu()
-		ram := container.Resources.Limits.Memory()
+		cpu := float64(container.Resources.Limits.Cpu().Value())
+		ram := float64(container.Resources.Limits.Memory().Value())
 
-		if cpu.Value() > 10 || ram.Value() > 10 {
+		if cpu > cpuLimit || ram > ramLimit {
 			// todo: send email if resource usage is being violated
 		}
 	}

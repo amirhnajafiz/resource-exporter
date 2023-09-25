@@ -64,9 +64,10 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 		return ctrl.Result{}, nil
 	}
 
-	// todo: get pod labels
 	// todo: get configs
+
 	// todo: check for violations
+
 	// todo: send email if resource usage is being violated
 
 	return ctrl.Result{}, nil

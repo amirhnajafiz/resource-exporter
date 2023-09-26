@@ -32,6 +32,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	"github.com/amirhnajafiz/pods-watcher/controllers"
+	"github.com/amirhnajafiz/pods-watcher/internal/config"
+	"github.com/amirhnajafiz/pods-watcher/internal/mail"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -87,9 +89,17 @@ func main() {
 		os.Exit(1)
 	}
 
+	// load config
+	cfg := config.Load()
+
+	// create mailgun agent
+	agent := mail.New(cfg.Mailgun)
+
 	if err = (&controllers.PodReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
+		Client:    mgr.GetClient(),
+		Scheme:    mgr.GetScheme(),
+		Config:    cfg,
+		MailAgent: agent,
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "Pod")
 		os.Exit(1)

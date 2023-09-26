@@ -73,8 +73,6 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 	var (
 		cpuLimit float64
 		ramLimit float64
-
-		rules []string
 	)
 
 	// check in rules
@@ -83,8 +81,6 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 		if len(rule.Labels) == 0 {
 			cpuLimit = rule.CPU
 			ramLimit = rule.RAM
-
-			rules = append(rules, rule.Name)
 
 			continue
 		}
@@ -95,8 +91,6 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 				// set to maximum of previous value and new value
 				cpuLimit = math.Max(rule.CPU, cpuLimit)
 				ramLimit = math.Max(rule.RAM, ramLimit)
-
-				rules = append(rules, rule.Name)
 			}
 		}
 	}
@@ -113,7 +107,6 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 			if er := r.MailAgent.Send(
 				req.NamespacedName.String(),
 				req.Namespace,
-				rules,
 				cpuLimit,
 				ramLimit,
 				cpu,

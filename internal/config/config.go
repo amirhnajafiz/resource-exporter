@@ -15,3 +15,7 @@ type (
 		Rules   []Rule      `koanf:"rules"`
 	}
 )
+
+func Load() Config {
+	return Default()
+}

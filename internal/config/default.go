@@ -1,7 +1,10 @@
 package config
 
+import "github.com/amirhnajafiz/pods-watcher/internal/mail"
+
 func Default() Config {
 	return Config{
-		Rules: []Rule{},
+		Mailgun: mail.Config{},
+		Rules:   []Rule{},
 	}
 }

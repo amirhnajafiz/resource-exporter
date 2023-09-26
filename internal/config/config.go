@@ -1,5 +1,7 @@
 package config
 
+import "github.com/amirhnajafiz/pods-watcher/internal/mail"
+
 type (
 	Rule struct {
 		Name   string            `koanf:"name"`
@@ -9,6 +11,7 @@ type (
 	}
 
 	Config struct {
-		Rules []Rule `koanf:"rules"`
+		Mailgun mail.Config `koanf:"mailgun"`
+		Rules   []Rule      `koanf:"rules"`
 	}
 )

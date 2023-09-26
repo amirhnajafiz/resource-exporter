@@ -8,12 +8,16 @@ type Agent interface {
 	Send(name, namespace string, rules []string, cpuLimit, ramLimit, cpu, ram float64) error
 }
 
-type agent struct {
-	connection *mailgun.MailgunImpl
+func New(cfg Config) Agent {
+	conn := mailgun.NewMailgun(cfg.Domain, cfg.Key)
+
+	return &agent{
+		connection: conn,
+	}
 }
 
-func New(cfg Config) {
-	conn := mailgun.NewMailgun(cfg.Domain, cfg.Key)
+type agent struct {
+	connection *mailgun.MailgunImpl
 }
 
 func (a agent) Send(name, namespace string, rules []string, cpuLimit, ramLimit, cpu, ram float64) error {

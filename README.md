@@ -12,6 +12,30 @@ and it sends notifications via email if any violations occurred.
 
 Here is the state machine of our system.
 
-```
+```txt
 Kubernetes cluster -> Pods -> Resources -> Check rules -> Rules violation -> Send email
 ```
+
+## configs
+
+Create a ```config.yml``` file based on ```config.example.yml``` template.
+
+```yaml
+mailgun:
+  sender: "pods-watcher.monitoring.snapp.ir"
+  receiver: "main.sre.team.snapp.ir"
+  subject: "pods-watcher-violation-email"
+  domain: "<mailgun.domain>"
+  key: "<mailgun.private_key>"
+rules:
+  - name: "nginx apps"
+    cpu: 10
+    ram: 10
+    labels:
+      app: nginx
+
+```
+
+## deploy
+
+In order to make a deployment of this controller run ```make``` command.

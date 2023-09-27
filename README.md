@@ -1,4 +1,4 @@
-# Cloud Watcher
+# Pods Watcher
 
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/amirhnajafiz/cloud-watcher)
 ![Platform](https://img.shields.io/badge/platform-kubernetes-blue)
@@ -8,7 +8,7 @@ A kubernetes controller for monitoring kubernetes cluster resources and send not
 on events. This system gets a set of rules as an input, after that it surveillance your cluster
 and it sends notifications via email if any violations occurred.
 
-## schema
+## :eye_speech_bubble: schema
 
 Here is the state machine of our system.
 
@@ -16,7 +16,7 @@ Here is the state machine of our system.
 Kubernetes cluster -> Pods -> Resources -> Check rules -> Rules violation -> Send email
 ```
 
-## configs
+## :luggage: configs
 
 Create a ```config.yml``` file based on ```config.example.yml``` template.
 
@@ -36,6 +36,6 @@ rules:
 
 ```
 
-## deploy
+## :man_pilot: deploy
 
 In order to make a deployment of this controller run ```make``` command.

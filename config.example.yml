@@ -1,0 +1,12 @@
+mailgun:
+  sender: "pods-watcher.monitoring.snapp.ir"
+  receiver: "main.sre.team.snapp.ir"
+  subject: "pods-watcher-violation-email"
+  domain: "<mailgun.domain>"
+  key: "<mailgun.private_key>"
+rules:
+  - name: "nginx apps"
+    cpu: 10
+    ram: 10
+    labels:
+      app: nginx
